@@ -2,9 +2,11 @@ GEM
   remote: http://rubygems.org/
   specs:
     eventmachine (0.12.10)
+    snmp (1.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   eventmachine
+  snmp

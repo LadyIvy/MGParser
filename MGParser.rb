@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'eventmachine'
+require 'snmp'
 
 class Parser
   def initialize(file)
