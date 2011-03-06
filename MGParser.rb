@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 require 'rubygems'
+require 'bundler/setup'
+require 'eventmachine'
 
 class Parser
   def initialize(file)
