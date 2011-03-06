@@ -1,8 +1,5 @@
 This file will include usage instructions, at the moment there are only few technical notes
 
-CreateCall - creates references to calls
-
-
 Inbound call steps:
   1. Call arrives from isdn line and "CreateCall" procedure will map it with a new reference ID:
        "CreateCall - Interface isdn-Bri2 create call 4-5."
