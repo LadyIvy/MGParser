@@ -1,0 +1,622 @@
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A320] < [10.135.0.23:5060] Received SIP packet from: 10.135.0.1:5060
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A321] < INVITE sip:3395242238@10.135.0.23 SIP/2.0
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A322] < Via: SIP/2.0/UDP 10.135.0.1:5060;branch=z9hG4bK59612a89;rport
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A323] < From: "Mirella Salvador" <sip:616729@10.135.0.1>;tag=as53019f99
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A324] < To: <sip:3395242238@10.135.0.23>
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A325] < Contact: <sip:616729@10.135.0.1>
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A326] < Call-ID: 3ea15a8928175b6a0f856ef67d83e143@10.135.0.1
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A327] < CSeq: 102 INVITE
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A328] < User-Agent: wildixgw
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A329] < X-WildixUniqueid: wildixbox-1293541792.20012
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A32A] < Max-Forwards: 70
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A32B] < Date: Tue, 28 Dec 2010 13:09:52 GMT
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A32C] < Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A32D] < Content-Type: application/sdp
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A32E] < Content-Length: 150
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A32F] < 
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A330] < v=0
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A331] < o=root 1772 1772 IN IP4 10.135.0.1
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A332] < s=session
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A333] < c=IN IP4 10.135.0.1
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A334] < t=0 0
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A335] < m=audio 14372 RTP/AVP 8 3
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A336] < a=rtpmap:8 PCMA/8000
+Dec 28 14:07:55 5.1.2.58 syslog: SipSignaling [A337] < a=rtpmap:3 GSM/8000
+Dec 28 14:07:55 5.1.2.58 syslog: CallTable [A338] CreateCall - Interface sip-brw0_0_0 create call 11495-11496.
+Dec 28 14:07:55 5.1.2.58 syslog: SipEngine [A339] [brw0_0_0] L0 N0 C11495 Context 0x012FD250 created.
+Dec 28 14:07:55 5.1.2.58 syslog: SipEngine [A33A] [brw0_0_0] Received preferred codec matches(Pcma). Setting ITC to speech.
+Dec 28 14:07:55 5.1.2.58 syslog: SipEngine [A33B] [brw0_0_0] L0 N0 C11495 User 3395242238@10.135.0.23 was INVITED by 616729@10.135.0.1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallManager [A33C] C11495 - CallSetupA
+Dec 28 14:07:55 5.1.2.58 syslog: CallTable [A33D] AddRefCall - Interface cm-CM try to add reference to call 11495.
+Dec 28 14:07:55 5.1.2.58 syslog: CallTable [A33E] AddRefCall - Interface cm-CM add reference to call 11495.
+Dec 28 14:07:55 5.1.2.58 syslog: CallManager [A33F] C11495-11496 - FindDestination: Forward call to the CallRouter
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouter [A340] Call 11495-11496 enter in callrouter:
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouter [A341] Src=[CID:11495 IID:sip-brw0_0_0 CP:itc=speech,date=28.12.2010 UTC,time=13:09:53 UTC,e164=616729,name=Mirella Salvador,host=10.135.0.1,uri=sip:616729@10.135.0.1,domain=,localip=10.135.0.23,hostname=,sipfrom="Mirella Salvador" <sip:616729@10.135.0.1>,sipfromfn=Mirella Salvador,sipfromhst=10.135.0.1,sipfromusr=616729,siprqt=sip:3395242238@10.135.0.23,siprqthst=10.135.0.23,siprqtusr=3395242238,sipto=<sip:3395242238@10.135.0.23>,siptohst=10.135.0.23,siptousr=3395242238,usr=616729,]
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouter [A342] Dst1/1=[CID:11496 IID:- CP:e164=3395242238,host=10.135.0.23,uri=sip:3395242238@10.135.0.23,usr=3395242238,]
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A343] Handle Call 11495-11496.
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A344] Source interface sip-brw0_0_0 doesn't match source criteria isdn-Bri1
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A345] Source interface sip-brw0_0_0 doesn't match source criteria isdn-Bri2
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A346] Source interface sip-brw0_0_0 doesn't match source criteria isdn-Bri3
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A347] Source interface sip-brw0_0_0 doesn't match source criteria isdn-Bri4
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A348] Source interface sip-brw0_0_0 matches source criteria sip-brw0_0_0
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A349] Match default criteria.
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouteTable [A34A] Insert new destination isdn-Bri1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallMappingTable [A34B] Execute mapping 'setanonymous' (calling-name to calling-pi)
+Dec 28 14:07:55 5.1.2.58 syslog: CallMappingTable [A34C] Property calling-name='Mirella Salvador' don't match expression 'restricted'.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A34D] Handle Call 11495-11496 with signaling properties name procedure.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A34E] Match signaling properties procedure.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A34F] Set property called-ec to 0.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A350] Set property calling-ed to 1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A351] Set property called-ed to 1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A352] Set property calling-allow180sdp to 1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A353] Set property calling-allow183nosdp to 1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A354] Set property calling-sippriv to 1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A355] Set property called-sippriv to 1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallSigPropsTable [A356] Set property called-host to ''.
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouter [A357] Call 11495-11496  exit from callrouter:
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouter [A358] Src=[CID:11495 IID:sip-brw0_0_0 CP:itc=speech,ed=1,date=28.12.2010 UTC,time=13:09:53 UTC,allow180sdp=1,allow183nosdp=1,sippriv=none,e164=616729,name=Mirella Salvador,host=10.135.0.1,uri=sip:616729@10.135.0.1,domain=,localip=10.135.0.23,hostname=,sipfrom="Mirella Salvador" <sip:616729@10.135.0.1>,sipfromfn=Mirella Salvador,sipfromhst=10.135.0.1,sipfromusr=616729,siprqt=sip:3395242238@10.135.0.23,siprqthst=10.135.0.23,siprqtusr=3395242238,sipto=<sip:3395242238@10.135.0.23>,siptohst=10.135.0.23,siptousr=3395242238,usr=616729,]
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouter [A359] Dst1/2=[CID:11496 IID:- CP:ec=0,ed=1,sippriv=none,e164=3395242238,host=,uri=sip:3395242238@10.135.0.23,usr=3395242238,]
+Dec 28 14:07:55 5.1.2.58 syslog: CallRouter [A35A] Dst2/2=[CID:11497 IID:isdn-Bri1 CP:ec=0,ed=1,sippriv=none,e164=3395242238,host=,uri=sip:3395242238@10.135.0.23,usr=3395242238,]
+Dec 28 14:07:55 5.1.2.58 syslog: CallTable [A35B] UseNextDestination - Call 11495-11497 use new destination isdn-Bri1.
+Dec 28 14:07:55 5.1.2.58 syslog: CallManager [A35C] C11495-11497 - FindDestination: Call is allowed
+Dec 28 14:07:55 5.1.2.58 syslog: CallManager [A35D] C11497 - Send CallSetupA
+Dec 28 14:07:55 5.1.2.58 syslog: LineEngine [A35E] EP2 Reserved.
+Dec 28 14:07:55 5.1.2.58 syslog: RTP [A35F] CRtpEngine::GetRtpFields() - Find failed - AID2, CID0x00000000
+Dec 28 14:07:55 5.1.2.58 syslog: LineEngine [A360] EP2 LowLevel report channel open : id=1
+Dec 28 14:07:55 5.1.2.58 syslog: EndPoint [A361] EP2: Line-side companding successully set to uLaw.
+Dec 28 14:07:55 5.1.2.58 syslog: EndPoint [A362] EP2 Jitter Buffer playout_type(Adapt Silence) vp_min_delay(30) vp_nom_delay(60) vp_max_delay(90) concealment(G711A)
+Dec 28 14:07:55 5.1.2.58 syslog: EndPoint [A363] EP2 EnterPreVoiceMode: Going in PreVoice mode
+Dec 28 14:07:55 5.1.2.58 syslog: EndPoint [A364] EP2 ModifyDigitDetectionConfig: Modify digit detection configuration
+Dec 28 14:07:55 5.1.2.58 syslog: CommandDigitInt [A365] L1 N2 - Change state from "FINAL" to "FINAL"
+Dec 28 14:07:55 5.1.2.58 syslog: LineEngine [A366] EP2 StopTone
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A367] L1 B2 - Change state from "Idle" to "Idle"
+Dec 28 14:07:55 5.1.2.58 syslog: CallTable [A368] AddRefCall - Interface isdn-Bri1 try to add reference to call 11497.
+Dec 28 14:07:55 5.1.2.58 syslog: CallTable [A369] AddRefCall - Interface isdn-Bri1 add reference to call 11497.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A36A] L1 B2 - CallSetupA received for call ID 11497 accepted.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A36B] L1 B2 - Multiple Cause IE unsupported, sending only primary Bearer Capability.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A36C] L1 B2 - Overriding primary Information Transfer Capability  16 with 0.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A36D] L1 B2 - No PI received from CM, using default (allowed).
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A36E] L1 B2 - No TON received from CM for caller, using default.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A36F] L1 B2 - Caller's TON is different from National and International: Calling Number IA5 digits may be dropped by the Network!
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A370] L1 B2 - No NPI received from CM, using default.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A371] L1 B2 - No SI received from CM, using default.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A372] L1 B2 - No TON received from CM for called user, using default.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A373] L1 B2 - No NPI received from CM for called user, using default.
+Dec 28 14:07:55 5.1.2.58 syslog: EndPoint [A374] EP2: Line-side companding successully set to aLaw.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnInterface [A375] L1 B2 - Change state from "Idle" to "CallSetup"
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3State [A376] CIsdnState::DispatchCCbMsg - Primitive request (53) to call 0x22 (OutBound)
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A377] 0 > Call 34-Outbound TEI 0 SEND Setup (5)
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A378] 0 > IE Bearer Capability [Coding: CCITT (0) Info transfer cap: Speech (0) Trans mode/rate: Circuit (0) 64 kbps (16) User info Layer 1/2/3: g.711 a-law (3) Unused (-1) Unused (-1) In Band Neg Pos: 1]
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A379] 0 > IE Channel Id 1/2 [IntID: Implicit Basic (0) 0 Preferred DChan: Is not D channel Pref: Preferred]
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A37A] 0 > IE Channel Id 2/2 [Chan Sel: 1]
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A37B] 0 > IE Progress Indicator [Coding standard: CCITT (0) Location: User (0) Description: Call is not end-to-end (1)]
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A37C] 0 > IE Calling Party Number [TON: Unknown (0) NPI: Unknown (0) PI: Presentation allowed (0) SI: User provided, not screened (0) '616729']
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A37D] 0 > IE Called Party Number [TON: Unknown (0) NPI: Unknown (0) '3395242238']
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A37E] 0 > IE User User [Discriminator: IA5 Characters (4) Info: 'Mirella Salvado'].
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3Msg [A37F] 0 > IE Sending Complete
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3State [A380] ISDN if 0, Call 34-Outbound: Starting T303 Timer in state U0_NULL_STATE.
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL3State [A381] Call 0x22 changed state from U0_NULL_STATE to U1_CALL_INITIATED
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL2State [A382] DL-Primitive request (DL Data Request) to If (0)
+Dec 28 14:07:55 5.1.2.58 syslog: IsdnStackL2State [A383] 0) Stopping T203 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A384] 0) Starting T200 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A385] 0) > [Informational frame]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A386] 0) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A387] 0) > N(R): 054 N(S): 061 P/F: 0 [ Informational ]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Raw [A388] 0) > [ 00 01 7a 6c 08 01 22 05 04 03 80 90 a3 18 01 82 1e 02 80 81 6c 08 00 80 36 31 36 37 32 39 70 0b 80 33 33 39 35 32 34 32 32 33 38 7e 10 04 4d 69 72 65 6c 6c 61 20 53 61 6c 76 61 64 6f a1  ]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL1State [A389] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:07:56 5.1.2.58 Isdn: 1850-Integrated Services Digital Network: 40-Bri1, B-channel 2: State changed to used.
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A38A] PH - Primitive request (PH Data Indication) to If (0)
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Raw [A38B] 0) < [ 00 01 01 7c  ]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A38C] 0) < [Supervisory frame]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A38D] 0) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A38E] 0) < N(R): 062 SS: 0 P/F: 0 [RR Receiver Ready]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A38F] 0) ACKing all packets from 61 to (but not including) 62
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A390] 0) Stopping T200 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A391] 0) Stopping T203 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A392] 0) Starting T203 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A393] > [10.135.0.23:5060] Sending SIP packet to: 10.135.0.1:5060
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A394] > SIP/2.0 100 Trying
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A395] > Via: SIP/2.0/UDP 10.135.0.1:5060;branch=z9hG4bK59612a89;rport=5060;received=10.135.0.1
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A396] > From: "Mirella Salvador" <sip:616729@10.135.0.1>;tag=as53019f99
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A397] > To: <sip:3395242238@10.135.0.23>
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A398] > Call-ID: 3ea15a8928175b6a0f856ef67d83e143@10.135.0.1
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A399] > CSeq: 102 INVITE
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A39A] > Server: W04BRI/v2.0.10.182 44XX-WX-D2000-41
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A39B] > Content-Length: 0
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A39C] > 
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A39D] PH - Primitive request (PH Data Indication) to If (0)
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Raw [A39E] 0) < [ 02 01 6c 7c 08 01 a2 02 18 01 8a  ]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A39F] 0) < [Informational frame]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A3A0] 0) < SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A3A1] 0) < N(R): 062 N(S): 054 P/F: 0
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A3A2] 0) < VR: 054 VS: 062 VA: 062
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A3A3] 0) > [Supervisory frame]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A3A4] 0) > SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Msg [A3A5] 0) > N(R): 055 SS: 0 P/F: 0 [ RR Receiver Ready ]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2Raw [A3A6] 0) > [ 02 01 01 6e ]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A3A7] 0) ACKing all packets from 62 to (but not including) 62
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A3A8] 0) Stopping T200 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A3A9] 0) Stopping T203 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL2State [A3AA] 0) Starting T203 Timer
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3Msg [A3AB] DL - Primitive request (DL Data Indication) to If (0)
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3Msg [A3AC] 0 < Call 34-Outbound TEI 0 Unicast RECV Call Proceeding (2)
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3Msg [A3AD] 0 < IE Channel Id 1/2 [IntID: Implicit Basic (0) 0 Preferred DChan: Is not D channel Pref: Exclusive]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3Msg [A3AE] 0 < IE Channel Id 2/2 [Chan Sel: 1]
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3State [A3AF] CIsdnState::DispatchIsdnMsg - Call Proceeding message dispatched to call 34 (OutBound)
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3State [A3B0] ISDN if 0, Call 34-Outbound: Stopping T303 Timer in state U1_CALL_INITIATED.
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3State [A3B1] ISDN if 0, Call 34-Outbound: Starting T310 Timer in state U1_CALL_INITIATED.
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL3State [A3B2] Call 0x22 changed state from U1_CALL_INITIATED to U3_OUTGOING_CALL_PROCEEDING
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnStackL1State [A3B3] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnInterface [A3B4] L1 B2 Call 34-Outbound: Received ISDN message "Proceeding Indication" (10) for state CallSetup.
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnInterface [A3B5] L1 B2 - Peer's primary Bearer Capabilities validated successfully.
+Dec 28 14:07:56 5.1.2.58 syslog: EndPoint [A3B6] EP2: Line-side companding successully set to aLaw.
+Dec 28 14:07:56 5.1.2.58 syslog: IsdnInterface [A3B7] L1 B2 - BChannel Connected On.
+Dec 28 14:07:56 5.1.2.58 syslog: CallManager [A3B8] C11497 - CallProgressA(2)
+Dec 28 14:07:56 5.1.2.58 syslog: CallManager [A3B9] C11495 - Send CallProgressA(2)
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3BA] [brw0_0_0] C11495 CallProgressA(2).
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3BB] [brw0_0_0] L1 N2 C11495 CCallCx::Proceed.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3BC] [brw0_0_0] L1 N2 C11495 Proceed call now.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3BD] [brw0_0_0] Received ITC matches(speech). Setting preferred codec to Pcma
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3BE] CRtpConnection::Open() - Enter - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3BF] CRtpConnection::SelectSessionMode() - Success - mode = 0, - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C0] CRtpPacketizer::ModifySettings() - encoding = PCMA, ptime out = 20, payload size = 160, SID size = 0
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C1] CRtpConnection::SelectCompressionAlgorithm() - Success - payload = PCMU ptime = 20, - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C2] CRtpSession::Open() - Enter - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C3] CRtpSession: Generate random sequence number (17259) and timestamp - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C4] CUdpSocket::Create() - Success
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C5] CUdpSocket::Bind() - Success - 0.0.0.0:5006
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C6] CUdpSocket::Connect() - Success - 0.0.0.0:0
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C7] CUdpSocket::SetAllowAnySource() - Success
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C8] CUdpSocket::SetUdpChecksum() - Success
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3C9] CUdpSocket::SetTos() - Success - Tos= 184
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3CA] CUdpSocket::Set8021QUserPriority() - Success - Priority = 6
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3CB] CRtpSession::Open() - Success - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3CC] CRtpConnection::Open() - Success - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3CD] CRtpEngine::OpenConnection() - Success - AID2, CID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3CE] [brw0_0_0] L1 N2 C11495 - RTP stream state change from 'IDLE' to 'INACTIVE'.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3CF] [brw0_0_0] L1 N2 C11495 CSipMediaNegotiation::Receive - State='Idle' ReceiveSdp=yes Reliable=yes
+Dec 28 14:07:56 5.1.2.58 syslog: SdpTools [A3D0] CSessionManager::InterpretOffer(0x125883c) returns SUCCESS.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3D1] [brw0_0_0] L1 N2 C11495  Negotiation state change from 'Idle' to 'Received Offer'.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3D2] [brw0_0_0] L1 N2 C11495 CCallCx::Progress with stream on. Allow 183 without SDP = yes.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3D3] [brw0_0_0] L1 N2 C11495 CSipMediaNegotiation::SetStreamReady - The call is now ready to open the media stream.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3D4] [brw0_0_0] L1 N2 C11495 CSipMediaNegotiation::Send - State='Received Offer' Reliable=no Stream=ready Neg=none MustResp=no
+Dec 28 14:07:56 5.1.2.58 syslog: SdpTools [A3D5] CSessionManager::GenerateAnswer(0x125883c) returns SUCCESS.
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3D6] [brw0_0_0] L1 N2 C11495  Negotiation state change from 'Received Offer' to 'Sent Unreliable Answer'.
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3D7] CRtpEngine::SetDynamicPayloadType() - EEncodingName 1, PayloadType 72 - AID2, CID0x00002CE7, - mode 2 SUCCESS
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3D8] CRtpConnection::Modify() - (Connection) Enter - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3D9] CRtpSession::Modify() - Success - mode: SEND_RECV - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3DA] CRtpConnection::SelectSessionMode() - Success - mode = 3, - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3DB] CRtpPacketizer::ModifySettings() - encoding = PCMA, ptime out = 20, payload size = 160, SID size = 0
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3DC] CUdpSocket::SetTos() - Success - Tos= 184
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3DD] CUdpSocket::Set8021QUserPriority() - Success - Priority = 6
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3DE] CRtpSession::Modify() - (Outgoing codec) - Success - payload: PCMA, ptime: 20 - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3DF] CRtpConnection::SelectCompressionAlgorithm() - Success - payload = PCMA ptime = 20, - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3E0] CRtpConnection::Modify() - (Connection) Success - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3E1] CRtpEngine::ModifyConnection() - Success - AID2, CID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3E2] [brw0_0_0] L1 N2 C11495 - RTP stream state change from 'INACTIVE' to 'OPEN'.
+Dec 28 14:07:56 5.1.2.58 syslog: LineEngine [A3E3] EP2 StartVoiceCommunication: Algo 352
+Dec 28 14:07:56 5.1.2.58 syslog: PotsEndPoint [A3E4] EP2 Set CID to 0x00002CE7.
+Dec 28 14:07:56 5.1.2.58 syslog: EndPoint [A3E5] EP2 EnterVoiceMode Going in idle mode
+Dec 28 14:07:56 5.1.2.58 syslog: EndPoint [A3E6] EP2 EnterVoiceMode: SetRuntimeOptions (old-new) (T38=1-1, CCCodec=0x160-0x160, MCEDin=0-0, MCEDout=0-0, IgnCNG=0-0, IgnCED=0-0, IgnV21=0-0, CDIS=1-1, AleIgnCNG=0-0, AleIngCED=0-0)valid=0, (DtmfInBd=0-1 DtmfRtp=0-0)valid=0 (FlashRtpTx=0-1)valid=0 (FlashRtpRx=0-1)valid=0
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3E7] CRtpSession::GetRtpSeqNumber() - Returns initial randomized sequence number 17259 - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: EndPoint [A3E8] EP2 Jitter Buffer playout_type(Adapt Silence) vp_min_delay(30) vp_nom_delay(60) vp_max_delay(90) concealment(G711A)
+Dec 28 14:07:56 5.1.2.58 syslog: EndPoint [A3E9] EP2 EnterVoiceMode: Voice encoder rate change to G.711 A-law 64 kbps Vad=0 pTime=20 payloadType=8
+Dec 28 14:07:56 5.1.2.58 syslog: RTP [A3EA] CRtpSession::GetRtpSeqNumber() - Returns initial randomized sequence number 17259 - AID2, SID0x00002CE7
+Dec 28 14:07:56 5.1.2.58 syslog: EndPoint [A3EB] EP2 EnterVoiceMode: Going in Voice mode
+Dec 28 14:07:56 5.1.2.58 syslog: SipEngine [A3EC] [brw0_0_0] L1 N2 C11495 Call state change from IDLE to PROG_STREAM.
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3ED] > [10.135.0.23:5060] Sending SIP packet to: 10.135.0.1:5060
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3EE] > SIP/2.0 183 Session Progress
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3EF] > Via: SIP/2.0/UDP 10.135.0.1:5060;branch=z9hG4bK59612a89;rport=5060;received=10.135.0.1
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F0] > From: "Mirella Salvador" <sip:616729@10.135.0.1>;tag=as53019f99
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F1] > To: <sip:3395242238@10.135.0.23>;tag=3078596381
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F2] > Call-ID: 3ea15a8928175b6a0f856ef67d83e143@10.135.0.1
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F3] > CSeq: 102 INVITE
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F4] > Allow: INVITE, ACK, BYE, CANCEL, REFER, NOTIFY, UPDATE
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F5] > Contact: <sip:3395242238@10.135.0.23:5060>
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F6] > Server: W04BRI/v2.0.10.182 44XX-WX-D2000-41
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F7] > Content-Type: application/sdp
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F8] > Content-Length: 153
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3F9] > 
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3FA] > v=0
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3FB] > o=MxSIP 2077826814132633133 1758413875194563748 IN IP4 10.135.0.23
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3FC] > s=-
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3FD] > c=IN IP4 10.135.0.23
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3FE] > t=0 0
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A3FF] > m=audio 5006 RTP/AVP 8
+Dec 28 14:07:56 5.1.2.58 syslog: SipSignaling [A400] > a=rtpmap:8 PCMA/8000
+Dec 28 14:07:56 5.1.2.58 syslog: LineEngine [A401] EP2 LowLevel report gen ind2: trans_id=0 group_status=3 fn_id=7208963
+Dec 28 14:07:56 5.1.2.58 syslog: RTCP [A402] CRtcpSession(0x130ea40) Send SR. Local SSRC=0x461C71FF, TxPacketCount=14972, RtpTimestamp=1170488946.
+Dec 28 14:07:56 5.1.2.58 syslog: RTCP [A403] CRtcpSession(0x12f1410) Send SR. Local SSRC=0x3BB8C093, TxPacketCount=60, RtpTimestamp=3335807024.
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A404] LAPD if 3: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A405] 3) > [Supervisory frame]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A406] 3) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A407] 3) > N(R): 024 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Raw [A408] 3) > [ 00 01 01 31 ]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A409] 3) Starting T200 Timer
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A40A] CLapdState::SetState - If 03 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL1State [A40B] PH - Primitive request (PH Data Request) to If (3)
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A40C] PH - Primitive request (PH Data Indication) to If (3)
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Raw [A40D] 3) < [ 00 01 01 0b  ]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A40E] 3) < [Supervisory frame]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A40F] 3) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A410] 3) < N(R): 005 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A411] 3) ACKing all packets from 5 to (but not including) 5
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A412] 3) Stopping T200 Timer
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A413] 3) Stopping T203 Timer
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A414] 3) Starting T203 Timer
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A415] CLapdState::SetState - If 03 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A416] LAPD if 2: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A417] 2) > [Supervisory frame]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A418] 2) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A419] 2) > N(R): 096 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Raw [A41A] 2) > [ 00 01 01 c1 ]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A41B] 2) Starting T200 Timer
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A41C] CLapdState::SetState - If 02 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL1State [A41D] PH - Primitive request (PH Data Request) to If (2)
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2State [A41E] PH - Primitive request (PH Data Indication) to If (2)
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Raw [A41F] 2) < [ 00 01 01 c1  ]
+Dec 28 14:07:57 5.1.2.58 syslog: IsdnStackL2Msg [A420] 2) < [Supervisory frame]
+Dec 28 14:07:58 5.1.2.58 syslog: IsdnStackL2Msg [A421] 2) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:07:58 5.1.2.58 syslog: IsdnStackL2Msg [A422] 2) < N(R): 096 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:07:58 5.1.2.58 syslog: IsdnStackL2State [A423] 2) ACKing all packets from 96 to (but not including) 96
+Dec 28 14:07:58 5.1.2.58 syslog: IsdnStackL2State [A424] 2) Stopping T200 Timer
+Dec 28 14:07:58 5.1.2.58 syslog: IsdnStackL2State [A425] 2) Stopping T203 Timer
+Dec 28 14:07:58 5.1.2.58 syslog: IsdnStackL2State [A426] 2) Starting T203 Timer
+Dec 28 14:07:58 5.1.2.58 syslog: IsdnStackL2State [A427] CLapdState::SetState - If 02 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:07:58 5.1.2.58 syslog: RTCP [A428] CRtcpSession(0x130ea40) Send SR. Local SSRC=0x461C71FF, TxPacketCount=15101, RtpTimestamp=1170509586.
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A429] LAPD if 1: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Msg [A42A] 1) > [Supervisory frame]
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Msg [A42B] 1) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Msg [A42C] 1) > N(R): 086 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Raw [A42D] 1) > [ 00 01 01 ad ]
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A42E] 1) Starting T200 Timer
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A42F] CLapdState::SetState - If 01 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL1State [A430] PH - Primitive request (PH Data Request) to If (1)
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A431] PH - Primitive request (PH Data Indication) to If (1)
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Raw [A432] 1) < [ 00 01 01 ab  ]
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Msg [A433] 1) < [Supervisory frame]
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Msg [A434] 1) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2Msg [A435] 1) < N(R): 085 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A436] 1) ACKing all packets from 85 to (but not including) 85
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A437] 1) Stopping T200 Timer
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A438] 1) Stopping T203 Timer
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A439] 1) Starting T203 Timer
+Dec 28 14:08:03 5.1.2.58 syslog: IsdnStackL2State [A43A] CLapdState::SetState - If 01 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:03 5.1.2.58 syslog: RTCP [A43B] CRtcpSession(0x12f1410) Send SR. Local SSRC=0x3BB8C093, TxPacketCount=390, RtpTimestamp=3335859824.
+Dec 28 14:08:04 5.1.2.58 syslog: RTCP [A43C] CRtcpSession(0x130ea40) Send SR. Local SSRC=0x461C71FF, TxPacketCount=15349, RtpTimestamp=1170549346.
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A43D] LAPD if 0: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Msg [A43E] 0) > [Supervisory frame]
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Msg [A43F] 0) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Msg [A440] 0) > N(R): 055 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Raw [A441] 0) > [ 00 01 01 6f ]
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A442] 0) Starting T200 Timer
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A443] CLapdState::SetState - If 00 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL1State [A444] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A445] PH - Primitive request (PH Data Indication) to If (0)
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Raw [A446] 0) < [ 00 01 01 7d  ]
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Msg [A447] 0) < [Supervisory frame]
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Msg [A448] 0) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2Msg [A449] 0) < N(R): 062 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A44A] 0) ACKing all packets from 62 to (but not including) 62
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A44B] 0) Stopping T200 Timer
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A44C] 0) Stopping T203 Timer
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A44D] 0) Starting T203 Timer
+Dec 28 14:08:05 5.1.2.58 syslog: IsdnStackL2State [A44E] CLapdState::SetState - If 00 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A44F] LAPD if 3: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Msg [A450] 3) > [Supervisory frame]
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Msg [A451] 3) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Msg [A452] 3) > N(R): 024 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Raw [A453] 3) > [ 00 01 01 31 ]
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A454] 3) Starting T200 Timer
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A455] CLapdState::SetState - If 03 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL1State [A456] PH - Primitive request (PH Data Request) to If (3)
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A457] PH - Primitive request (PH Data Indication) to If (3)
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Raw [A458] 3) < [ 00 01 01 0b  ]
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Msg [A459] 3) < [Supervisory frame]
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Msg [A45A] 3) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Msg [A45B] 3) < N(R): 005 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A45C] 3) ACKing all packets from 5 to (but not including) 5
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A45D] 3) Stopping T200 Timer
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A45E] 3) Stopping T203 Timer
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A45F] 3) Starting T203 Timer
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A460] CLapdState::SetState - If 03 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2State [A461] LAPD if 2: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:07 5.1.2.58 syslog: IsdnStackL2Msg [A462] 2) > [Supervisory frame]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A463] 2) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A464] 2) > N(R): 096 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Raw [A465] 2) > [ 00 01 01 c1 ]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A466] 2) Starting T200 Timer
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A467] CLapdState::SetState - If 02 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL1State [A468] PH - Primitive request (PH Data Request) to If (2)
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A469] PH - Primitive request (PH Data Indication) to If (2)
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Raw [A46A] 2) < [ 00 01 01 c1  ]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A46B] 2) < [Supervisory frame]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A46C] 2) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A46D] 2) < N(R): 096 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A46E] 2) ACKing all packets from 96 to (but not including) 96
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A46F] 2) Stopping T200 Timer
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A470] 2) Stopping T203 Timer
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A471] 2) Starting T203 Timer
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A472] CLapdState::SetState - If 02 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A473] PH - Primitive request (PH Data Indication) to If (0)
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Raw [A474] 0) < [ 02 01 6e 7c 08 01 a2 03 1e 02 82 88 1e 02 82 81  ]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A475] 0) < [Informational frame]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A476] 0) < SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A477] 0) < N(R): 062 N(S): 055 P/F: 0
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A478] 0) < VR: 055 VS: 062 VA: 062
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A479] 0) > [Supervisory frame]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A47A] 0) > SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Msg [A47B] 0) > N(R): 056 SS: 0 P/F: 0 [ RR Receiver Ready ]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2Raw [A47C] 0) > [ 02 01 01 70 ]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A47D] 0) ACKing all packets from 62 to (but not including) 62
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A47E] 0) Stopping T200 Timer
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A47F] 0) Stopping T203 Timer
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL2State [A480] 0) Starting T203 Timer
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL3Msg [A481] DL - Primitive request (DL Data Indication) to If (0)
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL3Msg [A482] 0 < Call 34-Outbound TEI 0 Unicast RECV Progress (3)
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL3Msg [A483] 0 < IE Progress Indicator [Coding standard: CCITT (0) Location: Public network serving local user (2) Description: In-band information or appropriate pattern now available (8)]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL3Msg [A484] 0 < IE Progress Indicator [Coding standard: CCITT (0) Location: Public network serving local user (2) Description: Call is not end-to-end (1)]
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL3State [A485] CIsdnState::DispatchIsdnMsg - Progress message dispatched to call 34 (OutBound)
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL3State [A486] ISDN if 0, Call 34-Outbound: Stopping T310 Timer in state U3_OUTGOING_CALL_PROCEEDING.
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnStackL1State [A487] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:08:08 5.1.2.58 syslog: IsdnInterface [A488] L1 B2 Call 34-Outbound: Received ISDN message "Progress Indication" (11) for state CallSetup.
+Dec 28 14:08:08 5.1.2.58 syslog: EndPoint [A489] EP2: Line-side companding successully set to aLaw.
+Dec 28 14:08:08 5.1.2.58 syslog: CallManager [A48A] C11497 - CallProgressA(2)
+Dec 28 14:08:08 5.1.2.58 syslog: CallManager [A48B] C11495 - Send CallProgressA(2)
+Dec 28 14:08:08 5.1.2.58 syslog: SipEngine [A48C] [brw0_0_0] C11495 CallProgressA(2).
+Dec 28 14:08:08 5.1.2.58 syslog: SipEngine [A48D] [brw0_0_0] L1 N2 C11495 CCallCx::Proceed.
+Dec 28 14:08:08 5.1.2.58 syslog: SipEngine [A48E] [brw0_0_0] L1 N2 C11495 CCallCx::Progress with stream off. Allow 183 without SDP = yes.
+Dec 28 14:08:09 5.1.2.58 syslog: RTCP [A48F] CRtcpSession(0x12f1410) Send SR. Local SSRC=0x3BB8C093, TxPacketCount=686, RtpTimestamp=3335907184.
+Dec 28 14:08:11 5.1.2.58 syslog: RTCP [A490] CRtcpSession(0x130ea40) Send SR. Local SSRC=0x461C71FF, TxPacketCount=15721, RtpTimestamp=1170608786.
+Dec 28 14:08:12 5.1.2.58 syslog: RTCP [A491] CRtcpSession(0x12f1410) Send SR. Local SSRC=0x3BB8C093, TxPacketCount=841, RtpTimestamp=3335931984.
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A492] LAPD if 1: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Msg [A493] 1) > [Supervisory frame]
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Msg [A494] 1) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Msg [A495] 1) > N(R): 086 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Raw [A496] 1) > [ 00 01 01 ad ]
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A497] 1) Starting T200 Timer
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A498] CLapdState::SetState - If 01 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL1State [A499] PH - Primitive request (PH Data Request) to If (1)
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A49A] PH - Primitive request (PH Data Indication) to If (1)
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Raw [A49B] 1) < [ 00 01 01 ab  ]
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Msg [A49C] 1) < [Supervisory frame]
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Msg [A49D] 1) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2Msg [A49E] 1) < N(R): 085 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A49F] 1) ACKing all packets from 85 to (but not including) 85
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A4A0] 1) Stopping T200 Timer
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A4A1] 1) Stopping T203 Timer
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A4A2] 1) Starting T203 Timer
+Dec 28 14:08:13 5.1.2.58 syslog: IsdnStackL2State [A4A3] CLapdState::SetState - If 01 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:15 5.1.2.58 syslog: RTCP [A4A4] CRtcpSession(0x12f1410) Send SR. Local SSRC=0x3BB8C093, TxPacketCount=997, RtpTimestamp=3335956944.
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2State [A4A5] LAPD if 3: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2Msg [A4A6] 3) > [Supervisory frame]
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2Msg [A4A7] 3) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2Msg [A4A8] 3) > N(R): 024 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2Raw [A4A9] 3) > [ 00 01 01 31 ]
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2State [A4AA] 3) Starting T200 Timer
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2State [A4AB] CLapdState::SetState - If 03 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL1State [A4AC] PH - Primitive request (PH Data Request) to If (3)
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2State [A4AD] PH - Primitive request (PH Data Indication) to If (3)
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2Raw [A4AE] 3) < [ 00 01 01 0b  ]
+Dec 28 14:08:17 5.1.2.58 syslog: IsdnStackL2Msg [A4AF] 3) < [Supervisory frame]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4B0] 3) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4B1] 3) < N(R): 005 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4B2] 3) ACKing all packets from 5 to (but not including) 5
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4B3] 3) Stopping T200 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4B4] 3) Stopping T203 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4B5] 3) Starting T203 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4B6] CLapdState::SetState - If 03 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4B7] LAPD if 2: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4B8] 2) > [Supervisory frame]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4B9] 2) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4BA] 2) > N(R): 096 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Raw [A4BB] 2) > [ 00 01 01 c1 ]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4BC] 2) Starting T200 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4BD] CLapdState::SetState - If 02 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL1State [A4BE] PH - Primitive request (PH Data Request) to If (2)
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4BF] PH - Primitive request (PH Data Indication) to If (2)
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Raw [A4C0] 2) < [ 00 01 01 c1  ]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4C1] 2) < [Supervisory frame]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4C2] 2) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4C3] 2) < N(R): 096 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4C4] 2) ACKing all packets from 96 to (but not including) 96
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4C5] 2) Stopping T200 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4C6] 2) Stopping T203 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4C7] 2) Starting T203 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4C8] CLapdState::SetState - If 02 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:18 5.1.2.58 syslog: RTCP [A4C9] CRtcpSession(0x130ea40) Send SR. Local SSRC=0x461C71FF, TxPacketCount=16069, RtpTimestamp=1170664546.
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4CA] LAPD if 0: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4CB] 0) > [Supervisory frame]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4CC] 0) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4CD] 0) > N(R): 056 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Raw [A4CE] 0) > [ 00 01 01 71 ]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4CF] 0) Starting T200 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4D0] CLapdState::SetState - If 00 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL1State [A4D1] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4D2] PH - Primitive request (PH Data Indication) to If (0)
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Raw [A4D3] 0) < [ 00 01 01 7d  ]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4D4] 0) < [Supervisory frame]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4D5] 0) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2Msg [A4D6] 0) < N(R): 062 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4D7] 0) ACKing all packets from 62 to (but not including) 62
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4D8] 0) Stopping T200 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4D9] 0) Stopping T203 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4DA] 0) Starting T203 Timer
+Dec 28 14:08:18 5.1.2.58 syslog: IsdnStackL2State [A4DB] CLapdState::SetState - If 00 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:21 5.1.2.58 syslog: RTCP [A4DC] CRtcpSession(0x130ea40) Send SR. Local SSRC=0x461C71FF, TxPacketCount=16245, RtpTimestamp=1170692626.
+Dec 28 14:08:22 5.1.2.58 syslog: RTCP [A4DD] CRtcpSession(0x12f1410) Send SR. Local SSRC=0x3BB8C093, TxPacketCount=1336, RtpTimestamp=3336011104.
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4DE] LAPD if 1: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Msg [A4DF] 1) > [Supervisory frame]
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Msg [A4E0] 1) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Msg [A4E1] 1) > N(R): 086 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Raw [A4E2] 1) > [ 00 01 01 ad ]
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4E3] 1) Starting T200 Timer
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4E4] CLapdState::SetState - If 01 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL1State [A4E5] PH - Primitive request (PH Data Request) to If (1)
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4E6] PH - Primitive request (PH Data Indication) to If (1)
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Raw [A4E7] 1) < [ 00 01 01 ab  ]
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Msg [A4E8] 1) < [Supervisory frame]
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Msg [A4E9] 1) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2Msg [A4EA] 1) < N(R): 085 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4EB] 1) ACKing all packets from 85 to (but not including) 85
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4EC] 1) Stopping T200 Timer
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4ED] 1) Stopping T203 Timer
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4EE] 1) Starting T203 Timer
+Dec 28 14:08:23 5.1.2.58 syslog: IsdnStackL2State [A4EF] CLapdState::SetState - If 01 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A4F0] LAPD if 3: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Msg [A4F1] 3) > [Supervisory frame]
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Msg [A4F2] 3) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Msg [A4F3] 3) > N(R): 024 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Raw [A4F4] 3) > [ 00 01 01 31 ]
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A4F5] 3) Starting T200 Timer
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A4F6] CLapdState::SetState - If 03 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL1State [A4F7] PH - Primitive request (PH Data Request) to If (3)
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A4F8] PH - Primitive request (PH Data Indication) to If (3)
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Raw [A4F9] 3) < [ 00 01 01 0b  ]
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Msg [A4FA] 3) < [Supervisory frame]
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Msg [A4FB] 3) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Msg [A4FC] 3) < N(R): 005 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A4FD] 3) ACKing all packets from 5 to (but not including) 5
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A4FE] 3) Stopping T200 Timer
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A4FF] 3) Stopping T203 Timer
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A500] 3) Starting T203 Timer
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A501] CLapdState::SetState - If 03 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2State [A502] PH - Primitive request (PH Data Indication) to If (0)
+Dec 28 14:08:27 5.1.2.58 syslog: IsdnStackL2Raw [A503] 0) < [ 02 01 70 7c 08 01 a2 45 08 02 83 9f 1e 02 82 88  ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A504] 0) < [Informational frame]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A505] 0) < SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A506] 0) < N(R): 062 N(S): 056 P/F: 0
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A507] 0) < VR: 056 VS: 062 VA: 062
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A508] 0) > [Supervisory frame]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A509] 0) > SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A50A] 0) > N(R): 057 SS: 0 P/F: 0 [ RR Receiver Ready ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Raw [A50B] 0) > [ 02 01 01 72 ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A50C] 0) ACKing all packets from 62 to (but not including) 62
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A50D] 0) Stopping T200 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A50E] 0) Stopping T203 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A50F] 0) Starting T203 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A510] DL - Primitive request (DL Data Indication) to If (0)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A511] 0 < Call 34-Outbound TEI 0 Unicast RECV Disconnect (69)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A512] 0 < IE Cause [Coding: CCITT (0) Location: Transit network (3) Cause: Normal, unspecified (31)]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A513] 0 < IE Progress Indicator [Coding standard: CCITT (0) Location: Public network serving local user (2) Description: In-band information or appropriate pattern now available (8)]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A514] CIsdnState::DispatchIsdnMsg - Disconnect message dispatched to call 34 (OutBound)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A515] Call 0x22 changed state from U3_OUTGOING_CALL_PROCEEDING to U12_DISCONNECT_INDICATION
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL1State [A516] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnInterface [A517] L1 B2 Call 34-Outbound: Received ISDN message "Disconnect Indication" (4) for state CallSetup.
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnInterface [A518] L1 B2 - Change state from "CallSetup" to "AwaitReleasing"
+Dec 28 14:08:28 5.1.2.58 syslog: CallManager [A519] C11497 - CallMessageA(2)
+Dec 28 14:08:28 5.1.2.58 syslog: CallManager [A51A] C11495 - Send CallMessageA(2)
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A51B] [brw0_0_0] C11495 CallMessageA(2).
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A51C] [brw0_0_0] L1 N2 C11495 Received invitation refused. Reason: 31. SIP code: 486
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A51D] [brw0_0_0] L1 N2 C11495 Send error response 486 ().
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A51E] [brw0_0_0] L1 N2 C11495 CCallCx::CmSendCallRelease cannot send a call release with cause 16 since the call is already released.
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A51F] [brw0_0_0] L1 N2 C11495 Call state change from PROG_STREAM to TERMINATED.
+Dec 28 14:08:28 5.1.2.58 syslog: LineEngine [A520] EP2 StopVoiceCommunication
+Dec 28 14:08:28 5.1.2.58 syslog: EndPoint [A521] EP2 StopVoiceCommunication Going in idle mode
+Dec 28 14:08:28 5.1.2.58 syslog: EndPoint [A522] EP2 Change CID from 0x00002CE7 to 0x00000000.
+Dec 28 14:08:28 5.1.2.58 syslog: EndPoint [A523] EP2 Jitter Buffer playout_type(Adapt Silence) vp_min_delay(30) vp_nom_delay(60) vp_max_delay(90) concealment(G711A)
+Dec 28 14:08:28 5.1.2.58 syslog: EndPoint [A524] EP2 EnterPreVoiceMode: Going in PreVoice mode
+Dec 28 14:08:28 5.1.2.58 syslog: EndPoint [A525] EP2 ModifyDigitDetectionConfig: Modify digit detection configuration
+Dec 28 14:08:28 5.1.2.58 syslog: RTCP [A526] CRtcpSession(0x12f1410) Send SR (Goodbye). Local SSRC=0x3BB8C093, TxPacketCount=1623, RtpTimestamp=3336057104.
+Dec 28 14:08:28 5.1.2.58 syslog: RTP [A527] CUdpSocket::Close() - Success
+Dec 28 14:08:28 5.1.2.58 syslog: RTP [A528] CRtpSession::Close() - Success - AID2, SID0x00002CE7
+Dec 28 14:08:28 5.1.2.58 syslog: RTP [A529] CRtpConnection::Close() - AID2, SID0x00002CE7
+Dec 28 14:08:28 5.1.2.58 syslog: RTP [A52A] CRtpEngine::CloseConnection() - Success - AID2, CID0x00002CE7
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A52B] [brw0_0_0] L1 N2 C11495 - RTP stream state change from 'OPEN' to 'INITIALIZED'.
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A52C] [brw0_0_0] L1 N2 C11495 Releasing call context 0x012FD250.
+Dec 28 14:08:28 5.1.2.58 syslog: SipEngine [A52D] [brw0_0_0] C11495 - EarlyDisconnect enabled or no inband info available/generated, terminate the call.
+Dec 28 14:08:28 5.1.2.58 syslog: CallTable [A52E] ReleaseCall - Interface sip-brw0_0_0 try to release call 11495.
+Dec 28 14:08:28 5.1.2.58 syslog: CallTable [A52F] ReleaseCall - Interface sip-brw0_0_0 release call 11495.
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A530] > [10.135.0.23:5060] Sending SIP packet to: 10.135.0.1:5060
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A531] > SIP/2.0 486 Busy Here
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A532] > Via: SIP/2.0/UDP 10.135.0.1:5060;branch=z9hG4bK59612a89;rport=5060;received=10.135.0.1
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A533] > From: "Mirella Salvador" <sip:616729@10.135.0.1>;tag=as53019f99
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A534] > To: <sip:3395242238@10.135.0.23>;tag=3078596381
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A535] > Call-ID: 3ea15a8928175b6a0f856ef67d83e143@10.135.0.1
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A536] > CSeq: 102 INVITE
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A537] > Server: W04BRI/v2.0.10.182 44XX-WX-D2000-41
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A538] > Content-Length: 0
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A539] > 
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A53A] < [10.135.0.23:5060] Received SIP packet from: 10.135.0.1:5060
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A53B] < ACK sip:3395242238@10.135.0.23 SIP/2.0
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A53C] < Via: SIP/2.0/UDP 10.135.0.1:5060;branch=z9hG4bK59612a89;rport
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A53D] < From: "Mirella Salvador" <sip:616729@10.135.0.1>;tag=as53019f99
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A53E] < To: <sip:3395242238@10.135.0.23>;tag=3078596381
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A53F] < Contact: <sip:616729@10.135.0.1>
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A540] < Call-ID: 3ea15a8928175b6a0f856ef67d83e143@10.135.0.1
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A541] < CSeq: 102 ACK
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A542] < User-Agent: wildixgw
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A543] < X-WildixUniqueid: wildixbox-1293541792.20012
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A544] < Max-Forwards: 70
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A545] < Content-Length: 0
+Dec 28 14:08:28 5.1.2.58 syslog: SipSignaling [A546] < 
+Dec 28 14:08:28 5.1.2.58 syslog: CallManager [A547] C11495 - CallReleaseA(16, -1)
+Dec 28 14:08:28 5.1.2.58 syslog: CallTable [A548] ReleaseCall - Interface cm-CM try to release call 11495.
+Dec 28 14:08:28 5.1.2.58 syslog: CallTable [A549] ReleaseCall - Interface cm-CM release call 11495.
+Dec 28 14:08:28 5.1.2.58 syslog: CallManager [A54A] C11497 - Send CallReleaseA(16)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A54B] LAPD if 2: Timer T203 expired in state 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A54C] 2) > [Supervisory frame]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A54D] 2) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A54E] 2) > N(R): 096 SS: 0 P/F: 1 [ RR Receiver Ready ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Raw [A54F] 2) > [ 00 01 01 c1 ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A550] 2) Starting T200 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A551] CLapdState::SetState - If 02 changed from 7_LINK_CONNECTION_ESTABLISHED to 8_TIMER_RECOVERY
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL1State [A552] PH - Primitive request (PH Data Request) to If (2)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnInterface [A553] L1 B2 - CallReleaseA message for state AwaitReleasing, release code = 16.
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnInterface [A554] L1 B2 - BChannel Connected Off.
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A555] CIsdnState::DispatchCCbMsg - Primitive request (45) to call 0x22 (OutBound)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A556] 0 > Call 34-Outbound TEI 0 SEND Release (77)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A557] 0 > IE Cause [Coding: CCITT (0) Location: User (0) Cause: Normal call clearing (16)]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A558] ISDN if 0, Call 34-Outbound: Starting T308 Timer in state U12_DISCONNECT_INDICATION.
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A559] Call 0x22 changed state from U12_DISCONNECT_INDICATION to U19_RELEASE_REQUEST
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A55A] DL-Primitive request (DL Data Request) to If (0)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A55B] 0) Stopping T203 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A55C] 0) Starting T200 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A55D] 0) > [Informational frame]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A55E] 0) > SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A55F] 0) > N(R): 057 N(S): 062 P/F: 0 [ Informational ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Raw [A560] 0) > [ 00 01 7c 72 08 01 22 4d 08 02 80 90  ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL1State [A561] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A562] PH - Primitive request (PH Data Indication) to If (2)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Raw [A563] 2) < [ 00 01 01 c1  ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A564] 2) < [Supervisory frame]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A565] 2) < SAPI: 00 C/R: 0 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A566] 2) < N(R): 096 SS: 0 P/F: 1 [RR Receiver Ready]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A567] 2) ACKing all packets from 96 to (but not including) 96
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A568] 2) Stopping T200 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A569] 2) Stopping T203 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A56A] 2) Starting T203 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A56B] CLapdState::SetState - If 02 changed from 8_TIMER_RECOVERY to 7_LINK_CONNECTION_ESTABLISHED
+Dec 28 14:08:28 5.1.2.58 Isdn: 1850-Integrated Services Digital Network: 40-Bri1, B-channel 2: State changed to used.
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A56C] PH - Primitive request (PH Data Indication) to If (0)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Raw [A56D] 0) < [ 02 01 72 7e 08 01 a2 5a  ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A56E] 0) < [Informational frame]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A56F] 0) < SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A570] 0) < N(R): 063 N(S): 057 P/F: 0
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A571] 0) < VR: 057 VS: 063 VA: 062
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A572] 0) > [Supervisory frame]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A573] 0) > SAPI: 00 C/R: 1 EA: 0 TEI: 000 EA: 1
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Msg [A574] 0) > N(R): 058 SS: 0 P/F: 0 [ RR Receiver Ready ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2Raw [A575] 0) > [ 02 01 01 74 ]
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A576] 0) ACKing all packets from 62 to (but not including) 63
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A577] 0) Stopping T200 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A578] 0) Stopping T203 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL2State [A579] 0) Starting T203 Timer
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A57A] DL - Primitive request (DL Data Indication) to If (0)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A57B] 0 < Call 34-Outbound TEI 0 Unicast RECV Release Complete (90)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A57C] CIsdnState::DispatchIsdnMsg - Release Complete message dispatched to call 34 (OutBound)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A57D] ISDN if 0, Call 34-Outbound: Stopping T308 Timer in state U19_RELEASE_REQUEST.
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3State [A57E] Call 0x22 changed state from U19_RELEASE_REQUEST to U0_NULL_STATE
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL3Msg [A57F] Releasing Call 34-Outbound
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnStackL1State [A580] PH - Primitive request (PH Data Request) to If (0)
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnInterface [A581] L1 B2 Call 34-Outbound: Received ISDN message "Release Confirm" (13) for state AwaitReleasing.
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnInterface [A582] L1 B2 - Failed stopping hairpinning channels
+Dec 28 14:08:28 5.1.2.58 syslog: CallTable [A583] ReleaseCall - Interface isdn-Bri1 try to release call 11497.
+Dec 28 14:08:28 5.1.2.58 syslog: CallTable [A584] ReleaseCall - Interface isdn-Bri1 release call 11497.
+Dec 28 14:08:28 5.1.2.58 syslog: CallTable [A585] ReleaseCall - Call 11495-11497 released.
+Dec 28 14:08:28 5.1.2.58 syslog: LineEngine [A586] EP2 StopTone
+Dec 28 14:08:28 5.1.2.58 syslog: IsdnInterface [A587] L1 B2 - Change state from "AwaitReleasing" to "Idle"
+Dec 28 14:08:28 5.1.2.58 syslog: CommandDigitInt [A588] L1 N2 - Event Terminate() on state "FINAL"
+Dec 28 14:08:28 5.1.2.58 syslog: CommandDigitInt [A589] L1 N2 - Event Terminate was not handled by state "FINAL", send the event to his parent "ROOT"
+Dec 28 14:08:28 5.1.2.58 syslog: CommandDigitInt [A58A] L1 N2 - Change state from "FINAL" to "FINAL"
+Dec 28 14:08:28 5.1.2.58 syslog: LineEngine [A58B] EP2 Released.
