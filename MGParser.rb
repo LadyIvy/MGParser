@@ -7,7 +7,7 @@ require 'snmp'
 =begin
 TODO
 1 add snmp procedure to enable syslog on media gateway
-  -procedure will need ip of gateway as parameter
+  -procedure will need ip of gateway as argument
   -it will set syslog server ip and port based on host's ip an default port 514
   -user should be able to provide alternative port
    
@@ -17,8 +17,8 @@ TODO
   -each line should have sourceID and finaldestID as prefix
   -each line will be analyzed in the following way:
     Check for CreateCall, split callid and assign the two values to 2 variables: sourceID and destID
-    Check e164 parameters in callrouter to retrieve calling and called numbers (Src(CID must correspond to SourceID) and Dst(CID must correspond to DestID))
-    Check IID parameter in callrouter's Src (CID must correspond to sourceID) this will help to understand if the call was originated from isdn or sip side
+    Check e164 arguments in callrouter to retrieve calling and called numbers (Src(CID must correspond to SourceID) and Dst(CID must correspond to DestID))
+    Check IID argument in callrouter's Src (CID must correspond to sourceID) this will help to understand if the call was originated from isdn or sip side
     Calculate finaldestID which will be our new reference point for capturing events (each step in callrouter adds +1 to the original destID)
     When CallManager sends a setup referred to finaldestID we can inform user that isdn setup has been sent to the operator or SIP server depending on what kind of source we found in step 3
     Check call manager for CallProgress events related to both finaldestID and sourceID and inform user that call is proceeding (CallProgress messages are related to both "proceeding indication" and "progress indication" )
