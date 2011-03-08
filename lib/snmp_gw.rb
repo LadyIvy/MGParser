@@ -5,8 +5,8 @@ require 'snmp'
 include SNMP
 
 class SnmpGw
-
 attr_accessor :port, :ipaddr
+
 def initialize(port, ipaddr)
   manager = Manager.new(:Host => ipaddr)
   local_ip = UDPSocket.open {|s| s.connect($options.list[:ipaddr]); s.addr.last }

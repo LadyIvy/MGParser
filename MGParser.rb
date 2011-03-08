@@ -21,7 +21,6 @@ EventMachine::run do
   		puts "Listening on {host}:{$options.list[:port]}"
 	end
 
-
 class Parser
   def initialize(file)
     if FileTest::exist?(file)
