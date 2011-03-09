@@ -14,9 +14,14 @@ require 'snmp_gw'
 $options = Option.parse(ARGV)
 
 module SyslogServer
-include EM::Protocols::LineText2
+include EventMachine::Protocols::LineText2
+
+  def post_init
+    puts "Media Gateway is connected!"
+  end
+
   def receive_line(data)
-    puts "#{data}"
+    
   end
 end
 
