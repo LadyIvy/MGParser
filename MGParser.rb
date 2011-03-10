@@ -20,7 +20,32 @@ module SyslogServer
   end
 
   def receive_data(data)
-    puts "#{data}".gsub(/<191>syslog: /,"")
+    trace = data.gsub(/<191>syslog: /,"")
+    trace.each do |line|
+      if 
+          line =~ /Calling Party.*/
+          caller = line.scan(/Calling Party.*'\d.*\d/).first.gsub(/Calling Party.* '/,"")
+          puts "Caller: #{caller}"
+      elsif 
+          line =~ /Called Party.*/
+          called = line.scan(/Called Party.*'\d.*\d/).first.gsub(/Called Party.* '/,"")
+          puts "Called: #{called}"
+      elsif
+         line =~ /SEND Setup/
+         puts "ISDN setup sent"
+      elsif
+         line =~ /Received ISDN message "Progress Indication"/
+         puts "\"Call Progress\" received, call is proceeding"
+      elsif
+         line =~ /Received ISDN message "Disconnect Indication"/
+         puts "Operator requested hangup"
+      elsif
+         line =~ /Cause: Normal, unspecified [(]31[)]/
+         puts "Called numer is busy!"
+      end
+  end
+    #puts trace
+    
   end
 end
 
