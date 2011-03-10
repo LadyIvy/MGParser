@@ -20,8 +20,8 @@ include EventMachine::Protocols::LineText2
     puts "Media Gateway is connected!"
   end
 
-  def receive_line(data)
-    
+  def receive_data(data)
+    puts "#{data}"
   end
 end
 
@@ -30,7 +30,7 @@ EventMachine::run do
   host = UDPSocket.open {|s| s.connect($options.list[:ipaddr],30000); s.addr.last }
 	port = $options.list[:port]
 	snmpgw = SnmpGw.new($options.list[:port],$options.list[:ipaddr])
-	EventMachine::start_server host, port, SyslogServer
+	EventMachine::open_datagram_socket host, port, SyslogServer
 end
 	
 #class Parser
