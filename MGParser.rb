@@ -23,9 +23,20 @@ module SyslogServer
     trace = data.gsub(/<191>syslog: /,"")
     trace.each do |line|
       if 
-          line =~ /Calling Party.*/
-          caller = line.scan(/Calling Party.*'\d.*\d/).first.gsub(/Calling Party.* '/,"")
-          puts "Caller: #{caller}"
+          line =~ /CreateCall.*\d/
+          sourceID, destID = line.scan(/CreateCall.*\d/).first.gsub(/CreateCall.*create call /,"").split("-")
+          #call = Call.new(sourceID, destID)
+      elsif
+          line =~ /CallRouter \[.*\] Src=\[CID:\d{1,}/
+          src = line.scan(/CallRouter \[.*\] Src=\[CID:\d{1,}/).first.gsub(/CallRouter \[.*\] Src=\[CID:/,"")
+            puts src
+          if src == sourceID 
+            caller = line.scan(/e164=\d{1,}/).first.gsub(/e164=/,"")
+            puts caller
+            puts "Caller: #{caller}"
+          else
+            puts "no match found"
+          end
       elsif 
           line =~ /Called Party.*/
           called = line.scan(/Called Party.*'\d.*\d/).first.gsub(/Called Party.* '/,"")

@@ -11,7 +11,7 @@ TODO
   -data should be parsed line by line and output printed to stdout
   -each line should have sourceID and finaldestID as prefix
   -each line will be analyzed in the following way:
-    Check for CreateCall, split callid and assign the two values to 2 variables: sourceID and destID
+    Check for CreateCall, split callid and assign the two values to 2 variables: sourceID and destID DONE
     Check e164 arguments in callrouter to retrieve calling and called numbers (Src(CID must correspond to SourceID) and Dst(CID must correspond to DestID))
     Check IID argument in callrouter's Src (CID must correspond to sourceID) this will help to understand if the call was originated from isdn or sip side
     Calculate finaldestID which will be our new reference point for capturing events (each step in callrouter adds +1 to the original destID)
