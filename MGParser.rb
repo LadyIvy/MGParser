@@ -20,26 +20,34 @@ module SyslogServer
   end
 
   def receive_data(data)
+    #calls_hash = Hash.new
     trace = data.gsub(/<191>syslog: /,"")
     trace.each do |line|
+    #TODO need to analyze callid of each line in order to print it at starting of each line
       if 
           line =~ /CreateCall.*\d/
           @sourceID, @destID = line.scan(/CreateCall.*\d/).first.gsub(/CreateCall.*create call /,"").split("-")
-          #call = Call.new(sourceID, destID)
+          #calls_hash['call_with_id' + @sourceID.to_s]=Call.new(@sourceID, @destID)
+          #call = Call.new(@sourceID, @destID)
+          
       elsif
           line =~ /CallRouter \[.*\] Src=\[CID:\d{1,}/
           src = line.scan(/CallRouter \[.*\] Src=\[CID:\d{1,}/).first.gsub(/CallRouter \[.*\] Src=\[CID:/,"")
           if src == @sourceID
             caller = line.scan(/e164=\d{1,}/).first.gsub(/e164=/,"")
-            puts "Caller: #{caller}"
+            puts "call_#{@sourceID} - Caller: #{caller}"
           end
       elsif 
-          line =~ /Called Party.*/
-          called = line.scan(/Called Party.*'\d.*\d/).first.gsub(/Called Party.* '/,"")
-          puts "Called: #{called}"
+          line =~ /CallRouter \[.*\] Dst2\/2=\[CID:\d{1,}/
+          dst = line.scan(/CallRouter \[.*\] Dst2\/2=\[CID:\d{1,}/).first.gsub(/CallRouter \[.*\] Dst2\/2=\[CID:/,"")
+          if dst == (@destID += 1)
+            clled = line.scan(/e164=\d{1,}/).first.gsub(/e164=/,"")
+            puts "call_#{@sourceID} - Called: #{called}"
       elsif
-         line =~ /SEND Setup/
-         puts "ISDN setup sent"
+         line =~ /CallManager \[.*\] C\d{1,} - Send CallSetupA/
+         id = line.scan(/CallManager \[.*\] C\d{1,}/).first.gsub(/CallManager \[.*\] C/,"")
+         if id == (@destID += 1)
+         puts "call_#{@sourceID} - ISDN setup sent"
       elsif
          line =~ /Received ISDN message "Progress Indication"/
          puts "\"Call Progress\" received, call is proceeding"
