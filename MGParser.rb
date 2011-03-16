@@ -43,11 +43,13 @@ module SyslogServer
           if dst == (@destID += 1)
             clled = line.scan(/e164=\d{1,}/).first.gsub(/e164=/,"")
             puts "call_#{@sourceID} - Called: #{called}"
+          end
       elsif
          line =~ /CallManager \[.*\] C\d{1,} - Send CallSetupA/
          id = line.scan(/CallManager \[.*\] C\d{1,}/).first.gsub(/CallManager \[.*\] C/,"")
          if id == (@destID += 1)
-         puts "call_#{@sourceID} - ISDN setup sent"
+           puts "call_#{@sourceID} - ISDN setup sent"
+         end
       elsif
          line =~ /Received ISDN message "Progress Indication"/
          puts "\"Call Progress\" received, call is proceeding"
