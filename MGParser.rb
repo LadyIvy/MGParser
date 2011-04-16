@@ -99,7 +99,7 @@ end
 #      file_lines = IO.readlines(file)
 #      analyzer(file_lines)
 #    else
-#      puts "File non trovato"
+#      puts "File not found"
 #    end
 #  end
 #  
