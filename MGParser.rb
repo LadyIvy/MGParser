@@ -46,7 +46,7 @@ module SyslogServer
     elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallSetupA/
         id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
         if id.to_i == (@destID)
-          puts "Call ID: #{@sourceID} - ISDN setup sent"
+          puts "Call ID: #{@sourceID} - ==> ISDN setup sent"
         end
         
     elsif line =~ /"Proceeding Indication" .* for state CallSetup./
@@ -56,23 +56,23 @@ module SyslogServer
         id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
         if id.to_i == (@destID)
           if @progress_indication == true
-            puts "Call ID: #{@sourceID} - \"Proceeding indication\" received from operator" 
+            puts "Call ID: #{@sourceID} - <== \"Proceeding indication\" received from operator" 
             @progress_indication = false
           else
-            puts "Call ID: #{@sourceID} - \"Call Progress\" received from operator"
+            puts "Call ID: #{@sourceID} - <== \"Call Progress\" received from operator"
           end 
         end
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(1\)/
         id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
         if id.to_i == (@destID)
-          puts "Call ID: #{@sourceID} - Destination number is ringing" 
+          puts "Call ID: #{@sourceID} - <== Destination number is ringing" 
         end
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallConnectA/
         id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
         if id.to_i == (@destID)
-          puts "Call ID: #{@sourceID} - Call has been answered!" 
+          puts "Call ID: #{@sourceID} - <== Call has been answered!" 
         end
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallMessageA\(2\)/
@@ -86,10 +86,10 @@ module SyslogServer
         cause = line.scan(/Send CallReleaseA\(\d{1,}/).first.gsub(/Send CallReleaseA\(/,"")
         if id.to_i == (@destID) 
           if @isdn_inbound_disconnect == true
-            puts "Call ID: #{@sourceID} - Operator requested hangup with cause: \"#{$causes[cause]}\""
+            puts "Call ID: #{@sourceID} - <== Operator requested hangup with cause: \"#{$causes[cause]}\""
             @isdn_inbound_disconnect = false
           else
-            puts "Call ID: #{@sourceID} - Gateway sent hangup with cause: \"#{$causes[cause]}\""
+            puts "Call ID: #{@sourceID} - ==> Gateway sent hangup with cause: \"#{$causes[cause]}\""
           end
         end
 
