@@ -103,32 +103,5 @@ end
 #    end
 #  end
 #  
-#  def analyzer(file_lines)
-#    file_lines.each do |line|    
-#      if 
-#        line =~ /Calling Party.*/
-#        caller = line.scan(/Calling Party.*'\d.*\d/).first.gsub(/Calling Party.* '/,"")
-#        puts "Chiamata da parte di: {caller}"
-#      elsif 
-#        line =~ /Called Party.*/
-#        called = line.scan(/Called Party.*'\d.*\d/).first.gsub(/Called Party.* '/,"")
-#        puts "Verso: {called}"
-#      elsif
-#        line =~ /SEND Setup/
-#        puts "Setup ISDN inviato"
-#      elsif
-#        line =~ /Received ISDN message "Progress Indication"/
-#        puts "Ricevuto \"Call Progress\" , l'operatore sta gestendo la chiamata"
-#      elsif
-#        line =~ /Received ISDN message "Disconnect Indication"/
-#        puts "L\'operatore ha richiesto il riaggancio di chiamata"
-#      elsif
-#        line =~ /Cause: Normal, unspecified [(]31[)]/
-#        puts "Il numero chiamato e\' occupato!"
-#      end
-#    end
-#  end
-#end
-
 #parser = Parser.new(ARGV.first)
 #parser
