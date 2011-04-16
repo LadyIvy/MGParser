@@ -12,6 +12,7 @@ require 'optparser'
 require 'snmp_gw'
 
 $options = Option.parse(ARGV)
+$causes = {"16" => "Normal hangup (probably requested by the person)", "31" => "Busy"}
 
 module SyslogServer
 
@@ -85,15 +86,13 @@ module SyslogServer
         cause = line.scan(/Send CallReleaseA\(\d{1,}/).first.gsub(/Send CallReleaseA\(/,"")
         if id.to_i == (@destID) 
           if @isdn_inbound_disconnect == true
-            puts "Call ID: #{@sourceID} - Operator requested hangup with cause #{cause}"
+            puts "Call ID: #{@sourceID} - Operator requested hangup with cause: \"#{$causes[cause]}\""
             @isdn_inbound_disconnect = false
           else
-            puts "Call ID: #{@sourceID} - Gateway sent hangup with cause #{cause}"
+            puts "Call ID: #{@sourceID} - Gateway sent hangup with cause: \"#{$causes[cause]}\""
           end
         end
 
-    elsif line =~ /Cause: Normal, unspecified [(]31[)]/
-        puts "Call ID: #{@sourceID} - Called numer is busy!"
     end
   end
     
