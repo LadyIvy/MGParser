@@ -21,5 +21,21 @@ TODO
 3 add option parser:
   -ip of isdn gateway address DONE
   -analyze log instead of gatewy if file is passed
+
+outbound call (two initial ids + 1 additional id added when exiting from call router): 
+Jan  2 08:45:45 syslog: CallTable [DAD8] CreateCall - Interface sip-bri0_0_0 create call 27-28.
+
+Jan  2 08:45:45 syslog: CallRouter [DAE0] Call 27-28 enter in callrouter:
+Jan  2 08:45:45 syslog: CallRouter [DAE1] Src=[CID:27 IID:sip-bri0_0_0 CP:itc=speech,date=02.01.2000 UTC,time=07:45:22 UTC,e164=109,name=Dawid Pogorzelski,host=213.21.144.17,uri=sip:109@213.21.144.17:5060,domain=,localip=192.168.222.162,hostname=,sipfrom="Dawid Pogorzelski" <sip:109@213.21.144.17:5060>,sipfromfn=Dawid Pogorzelski,sipfromhst=213.21.144.17,sipfromusr=109,siprqt=sip:3458579215@192.168.222.162:5060,siprqthst=192.168.222.162,siprqtusr=3458579215,sipto="" <sip:bri0_0_0@213.21.144.17:5060>,siptohst=213.21.144.17,siptousr=bri0_0_0,usr=109,]
+Jan  2 08:45:45 syslog: CallRouter [DAE2] Dst1/1=[CID:28 IID:- CP:e164=3458579215,host=192.168.222.162:5060,uri=sip:3458579215@192.168.222.162:5060,usr=3458579215,]
+Jan  2 08:45:45 syslog: CallRouteTable [DAE3] Handle Call 27-28.
+
+Jan  2 08:45:45 syslog: CallRouter [DAF4] Call 27-28  exit from callrouter:
+Jan  2 08:45:45 syslog: CallRouter [DAF5] Src=[CID:27 IID:sip-bri0_0_0 CP:itc=speech,ed=1,date=02.01.2000 UTC,time=07:45:22 UTC,allow180sdp=1,allow183nosdp=1,sippriv=none,e164=109,name=Dawid Pogorzelski,host=213.21.144.17,uri=sip:109@213.21.144.17:5060,domain=,localip=192.168.222.162,hostname=,sipfrom="Dawid Pogorzelski" <sip:109@213.21.144.17:5060>,sipfromfn=Dawid Pogorzelski,sipfromhst=213.21.144.17,sipfromusr=109,siprqt=sip:3458579215@192.168.222.162:5060,siprqthst=192.168.222.162,siprqtusr=3458579215,sipto="" <sip:bri0_0_0@213.21.144.17:5060>,siptohst=213.21.144.17,siptousr=bri0_0_0,usr=109,]
+Jan  2 08:45:45 syslog: CallRouter [DAF6] Dst1/2=[CID:28 IID:- CP:ec=0,ed=1,sippriv=none,e164=3458579215,host=,uri=sip:3458579215@192.168.222.162:5060,usr=3458579215,]
+Jan  2 08:45:45 syslog: CallRouter [DAF7] Dst2/2=[CID:29 IID:isdn-Bri1 CP:ec=0,ed=1,sippriv=none,e164=3458579215,host=,uri=sip:3458579215@192.168.222.162:5060,usr=3458579215,]
+Jan  2 08:45:45 syslog: CallTable [DAF8] UseNextDestination - Call 27-29 use new destination isdn-Bri1.
+
+
 =end
 
