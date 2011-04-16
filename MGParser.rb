@@ -74,8 +74,23 @@ module SyslogServer
           puts "Call ID: #{@sourceID} - Call has been answered!" 
         end
         
-    elsif line =~ /Received ISDN message "Disconnect Indication"/
-        puts "Call ID: #{@sourceID} - Operator requested hangup"
+    elsif line =~ /CallManager \[.*\] C\d{1,} - CallMessageA\(2\)/
+        id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
+        if id.to_i == (@destID)
+          @isdn_inbound_disconnect = true
+        end
+          
+    elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallReleaseA\(\d{1,}\)/
+        id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
+        cause = line.scan(/Send CallReleaseA\(\d{1,}/).first.gsub(/Send CallReleaseA\(/,"")
+        if id.to_i == (@destID) 
+          if @isdn_inbound_disconnect == true
+            puts "Call ID: #{@sourceID} - Operator requested hangup with cause #{cause}"
+            @isdn_inbound_disconnect = false
+          else
+            puts "Call ID: #{@sourceID} - Gateway sent hangup with cause #{cause}"
+          end
+        end
 
     elsif line =~ /Cause: Normal, unspecified [(]31[)]/
         puts "Call ID: #{@sourceID} - Called numer is busy!"
