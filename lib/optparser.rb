@@ -10,7 +10,7 @@
       # We set default values here.
       options = OpenStruct.new
       #A hash containing all command-line arguments with some default values
-      options.list = {:port =>"514"}
+      options.list = {:port =>"514", :snmp => "161"}
       options.verbose = false
 
       opts = OptionParser.new do |opts|
@@ -18,11 +18,18 @@
 
         opts.separator ""
         opts.separator "Specific options:"
-
+        
+        
         #Syslog port number
         opts.on("-p", "--port PORT",
                 "Port number on which receive syslog (default is 514)") do |port|
           options.list[:port] = port
+        end
+        
+        #Gateway SNMP port number
+        opts.on("-s", "--snmpport PORT",
+                "Gateway SNMP port number (default is 161)") do |snmp|
+          options.list[:snmp] = snmp
         end
         
         #gateway's ip address

@@ -70,7 +70,7 @@ end
 EventMachine::run do
   host = UDPSocket.open {|s| s.connect($options.list[:ipaddr],30000); s.addr.last }
 	port = $options.list[:port]
-	snmpgw = SnmpGw.new($options.list[:port],$options.list[:ipaddr])
+	snmpgw = SnmpGw.new($options.list[:port],$options.list[:ipaddr],$options.list[:snmp])
 	EventMachine::open_datagram_socket host, port, SyslogServer
 end
 	
