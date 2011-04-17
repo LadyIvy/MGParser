@@ -55,16 +55,13 @@ module SyslogServer
         
    elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(2\)/
         @callprogr_counter += 1
-        if @callprogr_counter >= 3
-          @call_forwarded = true
-        end
         id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
         if id.to_i == (@destID)
           if @progress_indication == true
             puts "Call ID: #{@sourceID} - <== \"Proceeding indication\" received from operator" 
             @progress_indication = false
           else
-            if @call_forwarded == true
+            if @callprogr_counter >=3 
               puts "Call ID: #{@sourceID} - <== The call will probably be answered by operator\'s voicemail or is being forwarded"
               @callprogr_counter = 0
             else
