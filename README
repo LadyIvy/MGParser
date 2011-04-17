@@ -1,18 +1,25 @@
-This file will include usage instructions, at the moment there are only few technical notes
+MGParser
+==========
 
-Inbound call steps:
-  1. Call arrives from isdn line and "CreateCall" procedure will map it with a new reference ID:
-       "CreateCall - Interface isdn-Bri2 create call 4-5."
-       (4 refers to the isdn inbound call and 5 is assigned as id to the first internal routing pass)
-       
-  2. After call router has matched source for the the call with id 5 it will insert a new destination
-     (hunt-group in my case) and add a new reference id to it: 6
-        CallRouter [0624] Dst2/2=[CID:6 IID:hunt-Bri2
-        
-  3. When hunt group finds a specific interface where to send the call a new reference id will be created for it: 7
-        CallRouter [0630] Dst2/2=[CID:7 IID:sip-bri0_1_0
-        CallTable [0631] UseNextDestination - Call 4-7 use new destination sip-bri0_1_0.
-        CallTable [0643] AddRefCall - Interface sip-bri0_1_0 add reference to call 7.
-        
-  4. At this point any event referred to ids from 4 to 7 is an event of the same call
+MGParser (MGP) is a tool which makes analysis of Mediatrix ISDN gateways debug a much simpler task.
+
+Documentation
+=============
+
+TODO
+
+Usage: MGParser.rb [options]
+
+Specific options:
+    -p, --port PORT                  Port number on which receive syslog (default is 514)
+    -s, --snmpport PORT              Gateway SNMP port number (default is 161)
+    -i, --ipaddr IPADDR              Media Gateway IP
+    -l, --logfile LOGFILE            Log file to analyze
+    -v, --[no-]verbose               Run verbosely
+
+Common options:
+    -h, --help                       Show this message
+        --version                    Show version
+
+
   
