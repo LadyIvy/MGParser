@@ -21,11 +21,11 @@ module SyslogServer
   end
 
   def receive_data(data)
-    #calls_hash = Hash.new
+
     trace = data.gsub(/<191>syslog: /,"")
     @callprogr_counter = 0
     trace.each do |line|
-    #TODO need to analyze callid of each line in order to print it at starting of each line
+
     if line =~ /CreateCall.*\d/
         @sourceID, @destID = line.scan(/CreateCall.*\d/).first.gsub(/CreateCall.*create call /,"").split("-")
         @destID = @destID.to_i
