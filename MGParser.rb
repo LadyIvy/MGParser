@@ -23,6 +23,7 @@ module SyslogServer
   def receive_data(data)
     #calls_hash = Hash.new
     trace = data.gsub(/<191>syslog: /,"")
+    @callprogr_counter = 0
     trace.each do |line|
     #TODO need to analyze callid of each line in order to print it at starting of each line
     if line =~ /CreateCall.*\d/
@@ -52,14 +53,23 @@ module SyslogServer
     elsif line =~ /"Proceeding Indication" .* for state CallSetup./
         @progress_indication = true
         
-    elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(2\)/
+   elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(2\)/
+        @callprogr_counter += 1
+        if @callprogr_counter >= 3
+          @call_forwarded = true
+        end
         id = line.scan(/C\d{1,}/).first.gsub(/C/,"")
         if id.to_i == (@destID)
           if @progress_indication == true
             puts "Call ID: #{@sourceID} - <== \"Proceeding indication\" received from operator" 
             @progress_indication = false
           else
-            puts "Call ID: #{@sourceID} - <== \"Call Progress\" received from operator"
+            if @call_forwarded == true
+              puts "Call ID: #{@sourceID} - <== The call will probably be answered by operator\'s voicemail or is being forwarded"
+              @callprogr_counter = 0
+            else
+                puts "Call ID: #{@sourceID} - <== \"Call Progress\" received from operator"
+            end
           end 
         end
         
