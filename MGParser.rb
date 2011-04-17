@@ -62,7 +62,7 @@ module SyslogServer
             @progress_indication = false
           else
             if @callprogr_counter >=3 
-              puts "Call ID: #{@sourceID} - <== The call will probably be answered by operator\'s voicemail or is being forwarded"
+              puts "Call ID: #{@sourceID} - <== The call will be probably answered by operator\'s voicemail or is being forwarded"
               @callprogr_counter = 0
             else
                 puts "Call ID: #{@sourceID} - <== \"Call Progress\" received from operator"
