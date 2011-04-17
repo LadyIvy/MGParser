@@ -7,7 +7,7 @@ Documentation
 =============
 
 TODO
-
+<code>
 Usage: MGParser.rb [options]
 
 Specific options:
@@ -21,5 +21,4 @@ Common options:
     -h, --help                       Show this message
         --version                    Show version
 
-
-  
+</code>
