@@ -104,6 +104,8 @@ EventMachine::run do
 	EventMachine::open_datagram_socket host, port, SyslogServer
 end
 	
+	
+	
 #class Parser
 #  def initialize(file)
 #    if FileTest::exist?(file)
