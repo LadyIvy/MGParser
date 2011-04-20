@@ -16,7 +16,7 @@ require "version"
       options.verbose = false
 
       opts = OptionParser.new do |opts|
-        opts.banner = "Usage: MGParser.rb [options]"
+        opts.banner = "Usage: mgparser [options]"
 
         opts.separator ""
         opts.separator "Specific options:"
