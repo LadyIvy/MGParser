@@ -1,3 +1,4 @@
+module Mgparser
 module VERSION
     MAJOR = 0 unless defined? MAJOR
     MINOR = 1 unless defined? MINOR
@@ -29,4 +30,4 @@ module VERSION
       @major.to_s + "." + @minor.to_s + "." + @revision.to_s
     end
   end
-
+end
