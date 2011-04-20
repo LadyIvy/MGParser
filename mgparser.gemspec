@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     bin/mgparser
     mgparser.gemspec
     lib/version.rb
+    lib/call.rb
     lib/optparser.rb
     lib/snmp_gw.rb
     LICENSE
