@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors = ["Dawid Pogorzelski"]
 
   s.date = Date.today.to_s
-  s.description = "MGParser (MGP) is a tool which makes analysis of Mediatrix ISDN gateways debug a much simpler task."
+  s.description = "MGParser (MGP) is a tool which makes analysis of Mediatrix ISDN gateways debug a much simpler task"
   s.email = "dawid.pogorzelski@mybushido.com"
   s.executables = ["mgparser"]
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
 
   s.homepage = "https://github.com/dawid999/MGParser"
   s.require_paths = ["lib"]
-  s.summary = "MGParser (MGP) is a tool which makes analysis of Mediatrix ISDN gateways debug a much simpler task."
+  s.summary = "Mediatrix ISDN gateways debug utility"
 
   # Runtime dependencies
   s.add_runtime_dependency("bundler", [">= 1.0.10"])
