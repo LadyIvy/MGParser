@@ -2,7 +2,7 @@ module Mgparser
 module VERSION
     MAJOR = 0 unless defined? MAJOR
     MINOR = 1 unless defined? MINOR
-    TINY  = 3 unless defined? TINY
+    TINY  = 4 unless defined? TINY
     
     STRING = [MAJOR, MINOR, TINY].join('.') unless defined? STRING
   end
