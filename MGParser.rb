@@ -12,8 +12,13 @@ require 'optparser'
 require 'snmp_gw'
 
 $options = Option.parse(ARGV)
-$causes = {
-           "16" => "Normal hangup (probably requested by the person)", 
+$causes = {"1" => "Unallocated (unassigned) number",
+           "2" => "No route to specified transit network (national use)",
+           "3" => "No route to destination",
+           "4" => "send special information tone",
+           "5" => "misdialed trunk prefix (national use)",
+           "6" => "channel unacceptable",
+           "16" => "Normal hangup (one of the endpoints requested it)", 
            "31" => "Busy",
            "101" =>"Message not compatible with call state"
            }
@@ -44,16 +49,17 @@ module SyslogServer
             
       elsif line =~ /UseNextDestination - Call \d{1,}-\d{1,}/
         id = line.scan(/UseNextDestination - Call \d{1,}-(\d{1,})/).first
-        if @matched == 1
-          puts  "Call ID: #{id} - Caller: #{@caller}"
-          puts  "Call ID: #{id} - Called: #{@called}"
-          @matched = 0
-        end
-        if @inbound == true
-          @matched += 1
+        if @matched < 1
+          if @inbound == true
+            @matched += 1
+          else
+            puts  "Call ID: #{id} - Caller: #{@caller}"
+            puts  "Call ID: #{id} - Called: #{@called}"
+          end
         else
           puts  "Call ID: #{id} - Caller: #{@caller}"
           puts  "Call ID: #{id} - Called: #{@called}"
+          @matched = 0
         end
           
       elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallSetupA/
