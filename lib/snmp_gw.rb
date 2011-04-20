@@ -19,7 +19,10 @@ def initialize(port, ipaddr, snmp)
     manager.close
   rescue Errno::EHOSTUNREACH, Errno::EHOSTDOWN
     puts "Host Unreachable!"
-    abort""
+    abort ""
+  rescue SNMP::RequestTimeout
+    puts "Host is not responding (a firewall can be active or there is no SNMP network service listening on port: #{snmp})"
+    abort ""
   end
 
 end
