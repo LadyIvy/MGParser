@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
-  class Option
+require "version"
 
+  class Option
+    
     #
     # Return a structure describing the options.
     #
@@ -44,10 +46,6 @@
           options.list[:logfile] = logfile
         end
 
-        # Boolean switch.
-        opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
-          options.verbose = v
-        end
 
         opts.separator ""
         opts.separator "Common options:"
@@ -61,7 +59,7 @@
 
         # Another typical switch to print the version.
         opts.on_tail("--version", "Show version") do
-          puts OptionParser::Version.join('.')
+          puts Mgparser::VERSION::STRING
           exit
         end
       end
