@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
     Gemfile
   }
 
-  s.has_rdoc = false
   s.homepage = "https://github.com/dawid999/MGParser"
   s.require_paths = ["lib"]
   s.summary = "MGParser (MGP) is a tool which makes analysis of Mediatrix ISDN gateways debug a much simpler task."
