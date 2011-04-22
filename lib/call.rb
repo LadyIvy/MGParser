@@ -34,7 +34,7 @@ def analyze(data)
       end
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallSetupA/
-      id = line.scan(/C(\d{1,})/).first
+      id = line.scan(/C(\d{1,}) -/).first
       if @inbound == true
         puts "Call ID: #{id} - <== ISDN setup received"
       else
@@ -47,7 +47,7 @@ def analyze(data)
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(2\)/
       @callprogr_counter += 1
-      id = line.scan(/C(\d{1,})/).first
+      id = line.scan(/C(\d{1,}) -/).first
         
         if @progress_indication == true
           #puts "Call ID: #{id} - <== \"Proceeding indication\" received from operator" 
@@ -62,27 +62,27 @@ def analyze(data)
         end 
     
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(3\)/
-      id = line.scan(/C(\d{1,})/).first
+      id = line.scan(/C(\d{1,}) -/).first
       puts "Call ID: #{id} - ==> \"Call Progress\" sent to the operator"
         
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(1\)/
-      id = line.scan(/C(\d{1,})/).first
+      id = line.scan(/C(\d{1,}) -/).first
       puts "Call ID: #{id} - <== Destination number is ringing" 
         
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallConnectA/
-      id = line.scan(/C(\d{1,})/).first
+      id = line.scan(/C(\d{1,}) -/).first
       puts "Call ID: #{id} - Call has been answered!" 
 
 
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallMessageA\(2\)/
-      id = line.scan(/C(\d{1,})/).first
+      id = line.scan(/C(\d{1,}) -/).first
       @isdn_inbound_disconnect = true
 
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallReleaseA\(\d{1,}\)/
-      id = line.scan(/C(\d{1,})/).first
+      id = line.scan(/C(\d{1,}) -/).first
       cause = line.scan(/Send CallReleaseA\((\d{1,})/).first
 
         if @isdn_inbound_disconnect == true
