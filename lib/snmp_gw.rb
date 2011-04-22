@@ -23,6 +23,8 @@ def initialize(port, ipaddr, snmp)
   rescue SNMP::RequestTimeout
     puts "Host is not responding (a firewall can be active or there is no SNMP network service listening on port: #{snmp})"
     abort ""
+  rescue Interrupt
+    puts "Closing gracefully"
   end
 
 end

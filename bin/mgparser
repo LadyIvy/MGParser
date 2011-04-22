@@ -109,6 +109,11 @@ else
     host = UDPSocket.open {|s| s.connect($options.list[:ipaddr],30000); s.addr.last }
 	  port = $options.list[:port]
 	  snmpgw = SnmpGw.new($options.list[:port],$options.list[:ipaddr],$options.list[:snmp])
+	  begin
 	  EventMachine::open_datagram_socket host, port, SyslogServer
-  end
+	  rescue RuntimeError
+      puts "Closing..."
+      abort ""
+end
+end
 end
