@@ -1,7 +1,7 @@
 class Call
 attr_accessor :data
 
-def initialize(data)
+def analyze(data)
  
   @callprogr_counter = 0
   @matched = 0

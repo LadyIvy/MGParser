@@ -96,10 +96,11 @@ else
 
     def post_init
       puts "Media Gateway is connected!"
+      @call = Call.new
     end
 
     def receive_data(data)
-      call = Call.new(data)
+      @call.analyze(data)
     end
   end
 
