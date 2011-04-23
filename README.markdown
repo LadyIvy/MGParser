@@ -33,8 +33,8 @@ Usage: mgparser [options]
 
 Specific options:
     -p, --port PORT                  Port number on which receive syslog (default is 514)
-    -s, --snmpport PORT              Gateway SNMP port number (default is 161)
-    -i, --ipaddr IPADDR              Media Gateway IP
+    -s, --snmpport PORT              Media Gateway SNMP port number (default is 161)
+    -i, --ipaddr IPADDR              Media Gateway IP address
     -l, --logfile LOGFILE            Log file to analyze
 
 Common options:
