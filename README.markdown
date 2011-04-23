@@ -19,13 +19,13 @@ You should also check that the syslog level is set to "Warning" or above for all
 this should already be OK.
 
 To start mgparser just type:
-<code>
-	mgparser -i <ip of your Mediatrix unit>
-</code>
+<p><code>
+	mgparser -i \<ip of your Mediatrix unit\>
+</code></p>
 
 If you want to analyze a log file instead of making live debug you can type:
 <code>
-	mgparser -l <path/to/your/log/file>
+	mgparser -l \<path/to/your/log/file\>
 </code>
  
 <pre><code>
