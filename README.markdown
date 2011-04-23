@@ -29,7 +29,7 @@ If you want to analyze a log file instead of making live debug you can type:
 </code></p>
  
 <pre><code>
-Usage: MGParser.rb [options]
+Usage: mgparser [options]
 
 Specific options:
     -p, --port PORT                  Port number on which receive syslog (default is 514)
