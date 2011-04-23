@@ -20,12 +20,12 @@ this should already be OK.
 
 To start mgparser just type:
 <p><code>
-	mgparser -i \<ip of your Mediatrix unit\>
+	mgparser -i <ip of your Mediatrix unit\>
 </code></p>
 
 If you want to analyze a log file instead of making live debug you can type:
 <p><code>
-	mgparser -l \<path/to/your/log/file\>
+	mgparser -l <path/to/your/log/file\>
 </code></p>
  
 <pre><code>
