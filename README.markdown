@@ -3,10 +3,31 @@ MGParser
 
 MGParser (MGP) is a tool which makes analysis of Mediatrix ISDN gateways debug a much simpler task.
 
-Documentation
+Prerequisites
 =============
 
-TODO
+- Mediatrix 4400 series media gateway (3000 also should be fine) with firmware version DGW2.0 
+- Ruby 1.8.7/1.9.2
+
+Getting Started
+=============
+
+Before starting mgparser ensure that there is no firewall enabled on your Mediatrix unit or that there is a rule 
+which will accept incoming connections on it's SNMP port (default is 161 but you can provide a different one with -s PORT option).
+You can find Mediatrix firewall settings in Network-->Local Firewall menu.
+You should also check that the syslog level is set to "Warning" or above for all services, if you have factory default settings
+this should already be OK.
+
+To start mgparser just type:
+<code>
+	mgparser -i <ip of your Mediatrix unit>
+</code>
+
+If you want to analyze a log file instead of making live debug you can type:
+<code>
+	mgparser -l <path/to/your/log/file>
+</code>
+ 
 <pre><code>
 Usage: MGParser.rb [options]
 
@@ -15,7 +36,6 @@ Specific options:
     -s, --snmpport PORT              Gateway SNMP port number (default is 161)
     -i, --ipaddr IPADDR              Media Gateway IP
     -l, --logfile LOGFILE            Log file to analyze
-    -v, --[no-]verbose               Run verbosely
 
 Common options:
     -h, --help                       Show this message
