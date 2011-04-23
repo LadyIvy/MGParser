@@ -24,9 +24,9 @@ To start mgparser just type:
 </code></p>
 
 If you want to analyze a log file instead of making live debug you can type:
-<code>
+<p><code>
 	mgparser -l \<path/to/your/log/file\>
-</code>
+</code></p>
  
 <pre><code>
 Usage: MGParser.rb [options]
