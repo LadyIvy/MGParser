@@ -18,9 +18,14 @@ You can find Mediatrix firewall settings in Network-->Local Firewall menu.
 You should also check that the syslog level is set to "Warning" or above for all services, if you have factory default settings
 this should already be OK.
 
+Install mgparser:
+<p><code>
+	sudo gem install mgparser
+</code></p>
+
 To start mgparser just type:
 <p><code>
-	mgparser -i ip_of_your_Mediatrix_unit
+	sudo mgparser -i ip_of_your_Mediatrix_unit
 </code></p>
 
 If you want to analyze a log file instead of making live debug you can type:
