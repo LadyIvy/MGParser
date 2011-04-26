@@ -18,6 +18,11 @@ You can find Mediatrix firewall settings in Network-->Local Firewall menu.
 You should also check that the syslog level is set to "Warning" or above for all services, if you have factory default settings
 this should already be OK.
 
+Update your rubygems:
+<p><code>
+	sudo gem update --system
+</code></p>
+
 Install mgparser:
 <p><code>
 	sudo gem install mgparser
