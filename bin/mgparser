@@ -111,7 +111,7 @@ else
 	  snmpgw = SnmpGw.new($options.list[:port],$options.list[:ipaddr],$options.list[:snmp])
 	  begin
 	  EventMachine::open_datagram_socket host, port, SyslogServer
-	  rescue RuntimeError
+	  rescue RuntimeError, Interrupt
       puts "Closing..."
       abort ""
 end
