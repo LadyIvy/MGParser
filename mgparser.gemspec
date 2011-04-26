@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "MGParser (MGP) is a tool which makes analysis of Mediatrix ISDN gateways debug a much simpler task"
   s.email = "dawid.pogorzelski@mybushido.com"
   s.executables = ["mgparser"]
-
+  s.date = "2011-04-27"
   s.files = %w{
     README.markdown
     bin/mgparser
