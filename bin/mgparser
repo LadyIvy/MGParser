@@ -108,6 +108,7 @@ else
   end
 
   #We initialize eventmachine
+  begin
   EventMachine::run do
     host = UDPSocket.open {|s| s.connect($options.list[:ipaddr],30000); s.addr.last }
 	  port = $options.list[:port]
@@ -117,6 +118,11 @@ else
 	  rescue RuntimeError, Interrupt
       puts "Closing..."
       abort ""
-end
-end
+    end
+  end
+  rescue Interrupt
+    puts "Interrupted"
+  rescue RunetimeError
+    puts "Are you root?"
+  end
 end
