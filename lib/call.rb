@@ -79,10 +79,19 @@ def analyze(data)
     elsif line =~ /CallManager \[.*\] C\d{1,} - CallMessageA\(2\)/
       id = line.scan(/C(\d{1,}) -/).first
       @isdn_inbound_disconnect = true
+      
+    elsif line =~ /CallManager.* Call is not allowed/
+      @resource_unavailable = true
+      @resource_unavailable_id = line.scan(/CallManager \[.*\] C\d{1,}-(\d{1,})/).first
 
         
     elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallReleaseA\(\d{1,}\)/
-      id = line.scan(/C(\d{1,}) -/).first
+      if @resource_unavailable == true
+        id = @resource_unavailable_id
+        @resource_unavailable = false
+      else
+        id = line.scan(/C(\d{1,}) -/).first
+      end
       cause = line.scan(/Send CallReleaseA\((\d{1,})/).first
 
         if @isdn_inbound_disconnect == true
