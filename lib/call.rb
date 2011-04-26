@@ -1,13 +1,11 @@
 class Call
 attr_accessor :data
 
-def analyze(data)
+def analyze(line)
  
   @callprogr_counter = 0
   @matched = 0
   
-  data.each do |line|
-
     if line =~ /Unicast RECV Setup/
       @inbound = true
 
@@ -102,6 +100,6 @@ def analyze(data)
         end
         
     end
-end
+
 end
 end
