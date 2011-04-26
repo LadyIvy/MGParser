@@ -21,14 +21,14 @@ attr_accessor :data
         @inbound = true
 
       elsif line =~ /CallRouter \[.*\] Src=/
-        @caller = line.scan(/e164=(\d{1,})/).first          
+        @caller = line.scan(/e164=(\d{1,})/).flatten!.first       
 
       elsif line =~ /CallRouter \[.*\] Dst\d\/2/
-        @called = line.scan(/e164=(\d{1,})/).first
+        @called = line.scan(/e164=(\d{1,})/).flatten!.first
 
 
       elsif line =~ /UseNextDestination - Call \d{1,}-\d{1,}/
-        id = line.scan(/UseNextDestination - Call \d{1,}-(\d{1,})/).first
+        id = line.scan(/UseNextDestination - Call \d{1,}-(\d{1,})/).flatten!.first
         if @matched < 1
           if @inbound == true
             @matched += 1
@@ -43,7 +43,7 @@ attr_accessor :data
         end
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallSetupA/
-        id = line.scan(/C(\d{1,}) -/).first
+        id = line.scan(/C(\d{1,}) -/).flatten!.first
         if @inbound == true
           puts "Call ID: #{id} - <== ISDN setup received"
         else
@@ -56,7 +56,7 @@ attr_accessor :data
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(2\)/
         @callprogr_counter += 1
-        id = line.scan(/C(\d{1,}) -/).first
+        id = line.scan(/C(\d{1,}) -/).flatten!.first
 
           if @progress_indication == true
             #puts "Call ID: #{id} - <== \"Proceeding indication\" received from operator" 
@@ -71,27 +71,27 @@ attr_accessor :data
           end 
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(3\)/
-        id = line.scan(/C(\d{1,}) -/).first
+        id = line.scan(/C(\d{1,}) -/).flatten!.first
         puts "Call ID: #{id} - ==> \"Call Progress\" sent to the operator"
 
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - CallProgressA\(1\)/
-        id = line.scan(/C(\d{1,}) -/).first
+        id = line.scan(/C(\d{1,}) -/).flatten!.first
         puts "Call ID: #{id} - <== Destination number is ringing" 
 
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - CallConnectA/
-        id = line.scan(/C(\d{1,}) -/).first
+        id = line.scan(/C(\d{1,}) -/).flatten!.first
         puts "Call ID: #{id} - Call has been answered!" 
 
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - CallMessageA\(2\)/
-        id = line.scan(/C(\d{1,}) -/).first
+        id = line.scan(/C(\d{1,}) -/).flatten!.first
         @isdn_inbound_disconnect = true
 
       elsif line =~ /CallManager.* Call is not allowed/
         @resource_unavailable = true
-        @resource_unavailable_id = line.scan(/CallManager \[.*\] C\d{1,}-(\d{1,})/).first
+        @resource_unavailable_id = line.scan(/CallManager \[.*\] C\d{1,}-(\d{1,})/).flatten!.first
 
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallReleaseA\(\d{1,}\)/
@@ -99,15 +99,15 @@ attr_accessor :data
           id = @resource_unavailable_id
           @resource_unavailable = false
         else
-          id = line.scan(/C(\d{1,}) -/).first
+          id = line.scan(/C(\d{1,}) -/).flatten!.first
         end
-        cause = line.scan(/Send CallReleaseA\((\d{1,})/).first
+        cause = line.scan(/Send CallReleaseA\((\d{1,})/).flatten!.first
 
           if @isdn_inbound_disconnect == true
-            puts "Call ID: #{id} - <== Operator requested hangup with cause: \"#{$causes[cause.first]}\""
+            puts "Call ID: #{id} - <== Operator requested hangup with cause: \"#{$causes[cause]}\""
             @isdn_inbound_disconnect = false
           else
-            puts "Call ID: #{id} - ==> Gateway sent hangup with cause: \"#{$causes[cause.first]}\""
+            puts "Call ID: #{id} - ==> Gateway sent hangup with cause: \"#{$causes[cause]}\""
           end
 
       end
