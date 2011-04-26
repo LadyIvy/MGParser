@@ -92,12 +92,19 @@ attr_accessor :data
       elsif line =~ /CallManager.* Call is not allowed/
         @resource_unavailable = true
         @resource_unavailable_id = line.scan(/CallManager \[.*\] C\d{1,}-(\d{1,})/).flatten!.first
+        
+      elsif line =~ /CallTable.* ReleaseCall - Interface isdn.*try to release.* \d{1,}/
+        @abnormal_hangup = true
+        @abnormal_hangup_id = line.scan(/CallTable.* ReleaseCall - Interface isdn.*try to release.* (\d{1,})/).flatten!.first
 
 
       elsif line =~ /CallManager \[.*\] C\d{1,} - Send CallReleaseA\(\d{1,}\)/
         if @resource_unavailable == true
           id = @resource_unavailable_id
           @resource_unavailable = false
+        elsif @abnormal_hangup == true
+          id = @abnormal_hangup_id
+          @abnormal_hangup = false
         else
           id = line.scan(/C(\d{1,}) -/).flatten!.first
         end
