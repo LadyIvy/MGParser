@@ -122,7 +122,7 @@ else
   end
   rescue Interrupt
     puts "Interrupted"
-  rescue RunetimeError
+  rescue RuntimeError
     puts "Are you root?"
   end
 end
