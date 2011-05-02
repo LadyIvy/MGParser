@@ -116,13 +116,11 @@ else
 	  begin
 	  EventMachine::open_datagram_socket host, port, SyslogServer
 	  rescue RuntimeError, Interrupt
-      puts "Closing..."
+      puts "Are you root?"
       abort ""
     end
   end
-  rescue Interrupt
+  rescue RuntimeError,Interrupt
     puts "Interrupted"
-  rescue RuntimeError
-    puts "Are you root?"
   end
 end
