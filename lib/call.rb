@@ -17,7 +17,7 @@ attr_accessor :data
   end
 
   def parse(line)
-      if line =~ /Unicast RECV Setup/
+      if line =~ /(Uni|Broad)cast RECV Setup/
         @inbound = true
 
       elsif line =~ /CallRouter \[.*\] Src=/
