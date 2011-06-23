@@ -1,0 +1,93 @@
+OUTBOUND ANSWERED AND DISCONNECT BY CALLED PARTY
+
+IsdnStackL3Msg [948D] 0 > Call 1-Outbound TEI 104 SEND Setup (5)
+
+IsdnStackL3Msg [9492] 0 > IE Calling Party Number [TON: Unknown (0) NPI: Unknown (0) PI: Presentation allowed (0) SI: User provided, not screened (0) '109']
+IsdnStackL3Msg [9493] 0 > IE Called Party Number [TON: Unknown (0) NPI: Unknown (0) '3458579215']
+
+IsdnStackL3Msg [94BA] 0 < Call 1-Outbound TEI 104 Unicast RECV Call Proceeding (2)
+
+IsdnStackL3Msg [9502] 0 < Call 1-Outbound TEI 104 Unicast RECV Progress (3)
+
+IsdnStackL3Msg [951A] 0 < Call 1-Outbound TEI 104 Unicast RECV Alerting (1)
+
+IsdnStackL3Msg [9535] 0 < Call 1-Outbound TEI 104 Unicast RECV Connect (7)
+
+IsdnStackL3Msg [9539] 0 > Call 1-Outbound TEI 104 SEND Connect Acknowledge (15)
+
+IsdnStackL3Msg [9578] 0 < Call 1-Outbound TEI 104 Unicast RECV Disconnect (69)
+IsdnStackL3Msg [9579] 0 < IE Cause [Coding: CCITT (0) Location: User (0) Cause: Normal call clearing (16)]
+
+IsdnStackL3Msg [9595] 0 > Call 1-Outbound TEI 104 SEND Release (77)
+IsdnStackL3Msg [8372] 0 > IE Cause [Coding: CCITT (0) Location: User (0) Cause: Normal call clearing (16)]
+
+IsdnStackL3Msg [95BB] 0 < Call 1-Outbound TEI 104 Unicast RECV Release Complete (90)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTBOUND ANSWERED AND DISCONNECT BY CALLING PARTY
+
+IsdnStackL3Msg [D3B6] 0 > Call 2-Outbound TEI 126 SEND Setup (5)
+
+IsdnStackL3Msg [D3BB] 0 > IE Calling Party Number [TON: Unknown (0) NPI: Unknown (0) PI: Presentation allowed (0) SI: User provided, not screened (0) '109']
+IsdnStackL3Msg [D3BC] 0 > IE Called Party Number [TON: Unknown (0) NPI: Unknown (0) '3458579215']
+
+IsdnStackL3Msg [D3E0] 0 < Call 2-Outbound TEI 126 Unicast RECV Call Proceeding (2)
+
+IsdnStackL3Msg [D3FB] 0 < Call 2-Outbound TEI 126 Unicast RECV Progress (3)
+
+IsdnStackL3Msg [D410] 0 < Call 2-Outbound TEI 126 Unicast RECV Alerting (1)
+
+IsdnStackL3Msg [D426] 0 < Call 2-Outbound TEI 126 Unicast RECV Connect (7)
+
+IsdnStackL3Msg [D42A] 0 > Call 2-Outbound TEI 126 SEND Connect Acknowledge (15)
+
+IsdnStackL3Msg [D443] 0 > Call 2-Outbound TEI 126 SEND Disconnect (69)
+IsdnStackL3Msg [D444] 0 > IE Cause [Coding: CCITT (0) Location: User (0) Cause: Normal call clearing (16)]
+
+IsdnStackL3Msg [D467] 0 < Call 2-Outbound TEI 126 Unicast RECV Release (77)
+
+IsdnStackL3Msg [D46A] 0 > Call 2-Outbound TEI 126 SEND Release Complete (90)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTBOUND REJECTED
+
+Jan  2 17:01:17 syslog: IsdnStackL3Msg [AB5F] 0 < Call 1-Outbound TEI 0 Unicast RECV Notify (110)
+Jan  2 17:01:17 syslog: IsdnStackL3Msg [AB60] 0 < IE Notification Indicator [Description: Remote call is diverting (123)]
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INBOUND ANSWERED AND DISCONNECT BY CALLING PARTY
+
+IsdnStackL3Msg [EB18] 0 < Call 53-Inbound TEI 127 Broadcast RECV Setup (5)
+
+IsdnStackL3Msg [EB1E] 0 < IE Calling Party Number [TON: International (1) NPI: ISDN Telephony (1) PI: Presentation allowed (0) SI: User provided, verified and passed (1) '04611715112']
+IsdnStackL3Msg [EB1F] 0 < IE Called Party Number [TON: National (2) NPI: ISDN Telephony (1) '461944987']
+
+IsdnStackL3Msg [EB3B] 0 > Call 53-Inbound TEI 113 SEND Call Proceeding (2)
+
+IsdnStackL3Msg [EB57] 0 > Call 53-Inbound TEI 113 SEND Alerting (1)
+
+IsdnStackL3Msg [EB6E] 0 > Call 53-Inbound TEI 113 SEND Connect (7)
+
+IsdnStackL3Msg [EB93] 0 < Call 53-Inbound TEI 113 Unicast RECV Connect Acknowledge (15)
+
+IsdnStackL3Msg [EBBF] 0 < Call 53-Inbound TEI 113 Unicast RECV Disconnect (69)
+IsdnStackL3Msg [EBC0] 0 < IE Cause [Coding: CCITT (0) Location: Public network serving remote user (4) Cause: Normal call clearing (16)]
+
+IsdnStackL3Msg [EBCA] 0 > Call 53-Inbound TEI 113 SEND Release (77)
+
+IsdnStackL3Msg [EBEE] 0 < Call 53-Inbound TEI 113 Unicast RECV Release Complete (90)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INBOUND ANSWERED AND DISCONNECT BY CALLED PARTY
+
+
+
+
+
+
+
+
+
+
