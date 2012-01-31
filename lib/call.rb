@@ -2,6 +2,33 @@ class Call
 attr_accessor :data
 
   # "analyze" will choose how to process syslog with "parse method" 
+  
+  def self.analyze_sip
+    data = Pcap::Capture.open_offline($options.list[:logfile])
+      data.each_packet do |pkt|
+        sip = Sip.new
+        sip.header = {}
+        sip.sdp = {}
+        #(?:^Via)?:
+    	  pkt.udp_data.scan(/(^.*): (.*)$/) do |field, value| 
+    	    case field
+  	      when "Via"
+    	      sip.header[:via] = "#{value}"
+  	      when "From"
+  	        sip.header[:from] = "#{value}"
+  	      when "To"
+  	        sip.header[:to] = "#{value}"
+  	      when "Contact"
+  	        sip.header[:contact] = "#{value}"
+  	      when "Call-ID"
+  	        sip.header[:call_id] = "#{value}"
+  	      when "CSeq"
+  	        sip.header[:cseq] = "#{value}"
+  	      end
+    	  end
+    	  sip.save
+    end
+  end  
    
   def analyze(data,is_file)
      

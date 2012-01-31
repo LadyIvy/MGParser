@@ -1,14 +1,18 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), ".", "../lib"))
-require 'rubygems'
 require 'eventmachine'
 require 'snmp'
 require 'optparse'
 require 'ostruct'
+require 'pcap'
+require 'mongoid'
 
 require 'call'
 require 'optparser'
 require 'snmp_gw'
+require 'sip'
+
+Mongoid.database = Mongo::Connection.new('127.0.0.1','27017').db('mgparser')
 
 $options = Option.parse(ARGV)
 $causes = {"1" => "Unallocated (unassigned) number",
@@ -85,10 +89,14 @@ $causes = {"1" => "Unallocated (unassigned) number",
            
 if $options.list[:logfile]
   if FileTest::exist?($options.list[:logfile])
-    data = IO.readlines($options.list[:logfile])
-    @is_file = true
-    call = Call.new
-    call.analyze(data,@is_file)
+    if File.extname($options.list[:logfile]) == ".pcap"
+     Call.analyze_sip
+    else
+      data = IO.readlines($options.list[:logfile])
+      @is_file = true
+      call = Call.new
+      call.analyze(data,@is_file)
+    end
   else
     puts "File not found"
   end
